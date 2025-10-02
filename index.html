@@ -32,7 +32,8 @@
     "jobTitle": "Student / Entrepreneur",
     "sameAs": [
       "https://github.com/Aryakuna14",
-      "https://www.linkedin.com/in/arya-sharan-516319200/"
+      "https://www.linkedin.com/in/arya-sharan-516319200/",
+      "https://www.instagram.com/axya1_7"
     ]
   }
   </script>
@@ -49,6 +50,7 @@
       --glass: rgba(255,255,255,0.8);
       --radius: 18px;
       --shadow: 0 10px 30px rgba(8,15,30,0.12);
+      --slide-bg: linear-gradient(180deg,#fff,#f7f9ff);
     }
 
     [data-theme="dark"]{
@@ -57,6 +59,7 @@
       --text: #e6eef8;
       --glass: rgba(255,255,255,0.03);
       --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      --slide-bg: rgba(255, 255, 255, 0.04);
       background-color: #071027;
     }
 
@@ -117,7 +120,7 @@
 
     /* profile card */
     .profile{padding:1rem;border-radius:14px;text-align:center}
-    .avatar{width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,#fff3 0%,transparent);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-weight:800}
+    .avatar{width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,#fff3 0%,transparent);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-weight:800;font-size: 2.5rem;}
     .meta{color:var(--muted);font-weight:600}
 
     /* Sections */
@@ -130,7 +133,8 @@
     /* Projects carousel */
     .carousel{position:relative;overflow:hidden;border-radius:12px}
     .slides{display:flex;transition:transform 0.5s ease}
-    .slide{min-width:100%;padding:1.2rem;background:linear-gradient(180deg,#fff,#f7f9ff);border-radius:10px}
+    .slide{min-width:100%;padding:1.2rem;background:var(--slide-bg);border-radius:10px}
+    .project-links{margin-top: 1rem; display: flex; gap: 0.75rem;}
     .proj-controls{display:flex;gap:0.5rem;position:absolute;right:12px;top:12px}
     .proj-dot{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,0.12)}
     .proj-dot.active{background:var(--accent)}
@@ -207,6 +211,7 @@
         <div class="cta">
           <a class="btn btn-primary" href="https://github.com/Aryakuna14" target="_blank">🚀 GitHub</a>
           <a class="btn btn-primary" href="https://www.linkedin.com/in/arya-sharan-516319200/" target="_blank">💼 LinkedIn</a>
+          <a class="btn btn-primary" href="https://www.instagram.com/axya1_7" target="_blank">📸 Instagram</a>
           <a class="btn btn-outline" href="http://www.lowwkey.shop" target="_blank">👕 Lowwkey</a>
         </div>
       </div>
@@ -225,7 +230,7 @@
       <div style="display:grid;gap:1rem">
         <div>
           <strong>Co-Owner & Marketing Head</strong>
-          <div class="meta">Lowwkey | Bangalore & Mumbai — <span class="date">Sep 2024 - Present</span></div>
+          <div class="meta">Lowwkey | Bangalore & Mumbai — <span class="date">Sep 2024 - May 2025</span></div>
           <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
             <li>Co-founded and launched a niche print-on-demand clothing brand and led its marketing strategy.</li>
             <li>Designed targeted digital campaigns and achieved efficient CPM of ₹50.</li>
@@ -238,16 +243,17 @@
           <div class="meta">Dayananda Sagar College of Engineering — Oct 2024 - Present</div>
            <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
             <li>Develop and implement promotional strategies for major college events and student-led initiatives.</li>
-            <li>Create impactful marketing campaigns that enhance student engagement and strengthen public relations.</li>
+            <li>Played a vital PR role in the 2024 Vibrations and 2025 Furore college fests.</li>
             <li>Foster key collaborations with internal and external partners to amplify event reach.</li>
           </ul>
         </div>
 
         <div>
           <strong>Operations Team Member</strong>
-          <div class="meta">IEDC — 2024 - Present</div>
+          <div class="meta">IEDC — Nov 2024 - Present</div>
            <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
             <li>Actively contribute to the planning and execution of innovation and entrepreneurship events on campus.</li>
+            <li>Played a key role in the 2024 E-Summit held at DSCE.</li>
             <li>Support the project ideation process for student startups, helping to foster a vibrant startup culture.</li>
           </ul>
         </div>
@@ -299,18 +305,27 @@
             <h3>🛍️ Lowwkey Brand Launch</h3>
             <p>Built a print-on-demand e-commerce strategy, platform selection, UX and marketing funnel to launch a niche clothing brand.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech / Tools:</strong> Shopify / Print provider integrations / Facebook Ads / Instagram influencers</p>
+            <div class="project-links">
+                <a href="http://www.lowwkey.shop" class="btn btn-outline" target="_blank">View Live</a>
+            </div>
           </article>
 
           <article class="slide">
             <h3>🐍 Python Learning Journey</h3>
             <p>Working through a full-stack Python path to combine AI, data science and engineering projects into product-ready demos.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Learning:</strong> Python, Pandas, NumPy, basic ML pipelines</p>
+            <div class="project-links">
+                <a href="#" class="btn btn-outline" target="_blank">View Code</a>
+            </div>
           </article>
 
           <article class="slide">
             <h3>🔌 Circuit Simulation Mini-Project</h3>
             <p>Analog/digital circuit simulations using MATLAB & LTspice for course projects and prototypes.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tools:</strong> MATLAB, LTSpice, Arduino</p>
+            <div class="project-links">
+                 <a href="#" class="btn btn-outline" target="_blank">View Code</a>
+            </div>
           </article>
         </div>
 
@@ -428,6 +443,7 @@
 
 </body>
 </html>
+
 
 
 
