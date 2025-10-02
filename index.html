@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arya Sharan — Engineer · Entrepreneur</title>
+
+  <!-- SEO & Social -->
+  <meta name="description" content="Arya Sharan — 2nd year EEE student, entrepreneur & builder. Python, AI, MATLAB, digital marketing, and product-driven projects." />
+  <link rel="canonical" href="https://Aryakuna14.github.io/" />
+  <meta name="theme-color" content="#667eea" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Arya Sharan — Engineer · Entrepreneur" />
+  <meta property="og:description" content="2nd year EEE student, entrepreneur & builder. Python, AI, MATLAB, digital marketing, and product-driven projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://Aryakuna14.github.io/" />
+  <meta property="og:image" content="https://Aryakuna14.github.io/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arya Sharan — Engineer · Entrepreneur" />
+  <meta name="twitter:description" content="2nd year EEE student, entrepreneur & builder. Python, AI, MATLAB, digital marketing, and product-driven projects." />
+
+  <!-- JSON-LD (structured data) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Arya Sharan",
+    "url": "https://Aryakuna14.github.io/",
+    "jobTitle": "Student / Entrepreneur",
+    "sameAs": [
+      "https://github.com/Aryakuna14",
+      "https://www.linkedin.com/in/arya-sharan-516319200/"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ========== Root & Theme ========== */
+    :root{
+      --bg-1: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      --surface: #ffffff;
+      --muted: #6b7280;
+      --text: #0f172a;
+      --accent: #2563eb;
+      --accent-2: #7c3aed;
+      --glass: rgba(255,255,255,0.8);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(8,15,30,0.12);
+    }
+
+    [data-theme="dark"]{
+      --surface: #0b1220;
+      --muted: #9ca3af;
+      --text: #e6eef8;
+      --glass: rgba(255,255,255,0.03);
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      background-color: #071027;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--text);
+      background:var(--bg-1);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      min-height:100vh;
+    }
+
+    /* animated subtle dots layer */
+    .bg-animation{position:fixed;inset:0;z-index:-2;opacity:0.9}
+    .bg-animation:before{content:'';position:absolute;inset:-25%;background:radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);background-size:48px 48px;animation:moveBG 20s linear infinite}
+    @keyframes moveBG{0%{transform:translate(0,0)}100%{transform:translate(60px,60px)}}
+
+    /* Nav */
+    nav{position:fixed;left:0;right:0;top:12px;margin:auto;max-width:1200px;padding:0 1rem;z-index:999}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;background:var(--glass);backdrop-filter:blur(8px);padding:0.6rem 1rem;border-radius:999px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.06)}
+    .logo{font-weight:700;font-size:1.05rem;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+    .nav-links{display:flex;gap:1rem;align-items:center}
+    .nav-links a{color:var(--text);text-decoration:none;padding:0.45rem 0.7rem;border-radius:999px;font-weight:600;font-size:0.95rem}
+    .nav-links a:hover{background:rgba(255,255,255,0.06)}
+
+    .controls{display:flex;gap:0.5rem;align-items:center}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:0.5rem;border-radius:10px;cursor:pointer}
+
+    /* Mobile hamburger */
+    .hamburger{display:none;padding:0.5rem;border-radius:8px}
+
+    /* Container */
+    .wrap{max-width:1100px;margin:110px auto 40px;padding:1rem}
+
+    .card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem;margin-bottom:1.6rem;border:1px solid rgba(0,0,0,0.04)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
+    .hero-left h1{font-size:2.6rem;margin-bottom:0.4rem;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;color:transparent}
+    .subtitle{color:var(--muted);font-weight:600;margin-bottom:1rem}
+    .desc{color:var(--muted);max-width:60ch;margin-bottom:1.2rem}
+
+    .cta{display:flex;gap:0.75rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;border-radius:999px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+    .btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent);font-weight:700}
+
+    /* profile card */
+    .profile{padding:1rem;border-radius:14px;text-align:center}
+    .avatar{width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,#fff3 0%,transparent);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-weight:800}
+    .meta{color:var(--muted);font-weight:600}
+
+    /* Sections */
+    h2{font-size:1.5rem;margin-bottom:1rem}
+
+    /* Skills grid */
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0.75rem}
+    .skill{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:0.8rem;border-radius:10px;text-align:center;font-weight:700}
+
+    /* Projects carousel */
+    .carousel{position:relative;overflow:hidden;border-radius:12px}
+    .slides{display:flex;transition:transform 0.5s ease}
+    .slide{min-width:100%;padding:1.2rem;background:linear-gradient(180deg,#fff,#f7f9ff);border-radius:10px}
+    .proj-controls{display:flex;gap:0.5rem;position:absolute;right:12px;top:12px}
+    .proj-dot{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,0.12)}
+    .proj-dot.active{background:var(--accent)}
+
+    /* Projects grid fallback */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+
+    /* Resume preview */
+    .resume-actions{display:flex;gap:0.6rem;align-items:center}
+    input[type=file]{display:none}
+    .file-label{padding:0.55rem 0.9rem;border-radius:10px;border:1px dashed rgba(0,0,0,0.08);cursor:pointer}
+    .pdf-preview{width:100%;height:500px;border-radius:10px;border:1px solid rgba(0,0,0,0.06)}
+
+    /* Footer */
+    footer{color:white;text-align:center;padding:2rem 1rem}
+
+    /* Responsiveness */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .hero-right{order:-1}
+      .hamburger{display:block}
+      .nav-links{display:none}
+    }
+
+    @media (max-width:640px){
+      .wrap{padding:0.6rem}
+      .card{padding:1rem}
+      .pdf-preview{height:360px}
+    }
+
+    /* small transitions */
+    .fade-up{opacity:0;transform:translateY(10px);transition:all 0.6s ease}
+    .fade-up.in{opacity:1;transform:none}
+
+  </style>
+</head>
+<body>
+  <div class="bg-animation" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <div style="display:flex;gap:1rem;align-items:center">
+        <div class="logo">AS</div>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="themeToggle" title="Toggle theme" class="btn-ghost" aria-pressed="false">🌙</button>
+        <button id="hamburger" class="hamburger btn-ghost" aria-expanded="false">☰</button>
+      </div>
+    </div>
+
+    <!-- mobile menu (cloned content) -->
+    <div id="mobileMenu" style="display:none;margin-top:0.6rem;" class="card">
+      <div style="display:flex;flex-direction:column;gap:0.4rem">
+        <a href="#home">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section id="home" class="card hero" aria-label="Hero">
+      <div class="hero-left">
+        <h1>Arya Sharan</h1>
+        <div class="subtitle">Engineer • Entrepreneur • Innovator</div>
+        <p class="desc">Second-year Electrical and Electronics Engineering student with a proven track record in entrepreneurship and marketing. Co-founder and Marketing Head of a print-on-demand clothing brand. Currently learning Python, AI & Data Science to build product-focused solutions.</p>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="https://github.com/Aryakuna14" target="_blank">🚀 GitHub</a>
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/arya-sharan-516319200/" target="_blank">💼 LinkedIn</a>
+          <a class="btn btn-outline" href="http://www.lowwkey.shop" target="_blank">👕 Lowwkey</a>
+        </div>
+      </div>
+
+      <aside class="hero-right profile">
+        <div class="avatar">AS</div>
+        <div style="font-weight:800">Arya Sharan</div>
+        <div class="meta">Dayananda Sagar College of Engineering — BE (EEE)</div>
+        <div style="margin-top:0.7rem;color:var(--muted);font-weight:700">Bangalore • +91 91106 48489</div>
+      </aside>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="card fade-up" tabindex="0">
+      <h2>Experience</h2>
+      <div style="display:grid;gap:1rem">
+        <div>
+          <strong>Co-Owner & Marketing Head</strong>
+          <div class="meta">Lowwkey | Bangalore & Mumbai — <span class="date">Sep 2024 - Present</span></div>
+          <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted)">
+            <li>Co-founded and launched a niche print-on-demand clothing brand and led its marketing strategy.</li>
+            <li>Designed targeted digital campaigns and achieved efficient CPM of ₹50.</li>
+            <li>Led collaborations with influencers and optimized user acquisition channels.</li>
+          </ul>
+        </div>
+
+        <div>
+          <strong>Marketing Team Member</strong>
+          <div class="meta">Dayananda Sagar College of Engineering — Oct 2024 - Present</div>
+        </div>
+
+        <div>
+          <strong>Operations Team Member</strong>
+          <div class="meta">IEDC — 2024 - Present</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="card fade-up">
+      <h2>Education</h2>
+      <div style="display:flex;flex-direction:column;gap:0.6rem">
+        <div>
+          <strong>Bachelor of Engineering - Electrical & Electronics</strong>
+          <div class="meta">Dayananda Sagar College of Engineering — 2024 - 2028</div>
+        </div>
+        <div>
+          <strong>Class 12</strong>
+          <div class="meta">DY Patil International School — 2021 - 2023 (Maths & CS)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="card fade-up">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">Python</div>
+        <div class="skill">C / C++</div>
+        <div class="skill">MATLAB</div>
+        <div class="skill">Arduino</div>
+        <div class="skill">Digital Marketing</div>
+        <div class="skill">Brand Strategy</div>
+        <div class="skill">Public Relations</div>
+        <div class="skill">Leadership</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="card fade-up">
+      <h2>Projects</h2>
+
+      <!-- Carousel -->
+      <div class="carousel" aria-roledescription="carousel">
+        <div class="slides" id="slides">
+          <article class="slide">
+            <h3>🛍️ Lowwkey Brand Launch</h3>
+            <p>Built a print-on-demand e-commerce strategy, platform selection, UX and marketing funnel to launch a niche clothing brand.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech / Tools:</strong> Shopify / Print provider integrations / Facebook Ads / Instagram influencers</p>
+          </article>
+
+          <article class="slide">
+            <h3>🐍 Python Learning Journey</h3>
+            <p>Working through a full-stack Python path to combine AI, data science and engineering projects into product-ready demos.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Learning:</strong> Python, Pandas, NumPy, basic ML pipelines</p>
+          </article>
+
+          <article class="slide">
+            <h3>🔌 Circuit Simulation Mini-Project</h3>
+            <p>Analog/digital circuit simulations using MATLAB & LTspice for course projects and prototypes.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tools:</strong> MATLAB, LTSpice, Arduino</p>
+          </article>
+        </div>
+
+        <div class="proj-controls" aria-hidden="true">
+          <button id="prevProj" class="btn-ghost">◀</button>
+          <button id="nextProj" class="btn-ghost">▶</button>
+        </div>
+
+        <div style="position:absolute;left:12px;bottom:12px;display:flex;gap:6px">
+          <div class="proj-dot" data-index="0"></div>
+          <div class="proj-dot" data-index="1"></div>
+          <div class="proj-dot" data-index="2"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="card fade-up">
+      <h2>Resume</h2>
+      <p style="color:var(--muted);margin-bottom:0.6rem">You can paste your public resume link below to embed it directly on the page.</p>
+
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:0.8rem;align-items:center">
+         <!--
+            IMPORTANT: Get the public share link for your "new resume.pdf" from Google Drive or GitHub.
+            Paste it into the value="" attribute of the input field below.
+          -->
+        <input id="resumeLink" type="url" placeholder="Paste public PDF link (https://...)" value="YOUR_PUBLIC_RESUME_LINK_HERE" style="padding:0.55rem;border-radius:9px;border:1px solid rgba(0,0,0,0.06);flex-grow:1;" />
+        <button id="embedBtn" class="btn btn-primary">Embed Link</button>
+      </div>
+
+      <iframe id="pdfPreview" class="pdf-preview" title="Resume preview"> </iframe>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card fade-up">
+      <h2>Get in touch</h2>
+      <div style="display:flex;gap:0.6rem;flex-wrap:wrap">
+        <a class="file-label" href="mailto:aryasharan47@gmail.com">📧 aryasharan47@gmail.com</a>
+        <a class="file-label" href="tel:+919110648489">📱 +91 91106 48489</a>
+        <a class="file-label" href="#">📍 Bangalore, India</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div style="max-width:1100px;margin:0 auto;padding:1rem;color:#eef;opacity:0.95;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <div>© 2025 Arya Sharan</div>
+      <div style="color:#dfe;">Built with passion and code</div>
+    </div>
+  </footer>
+
+  <script>
+    // ======= Theme Toggle (persist in localStorage) =======
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const stored = localStorage.getItem('theme');
+    if(stored) document.documentElement.setAttribute('data-theme', stored);
+    updateThemeUI();
+
+    themeToggle.addEventListener('click', ()=>{
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? null : 'dark';
+      if(next) document.documentElement.setAttribute('data-theme', next); else document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', next || 'light');
+      updateThemeUI();
+    });
+
+    function updateThemeUI(){
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      themeToggle.textContent = isDark ? '☀️' : '🌙';
+      themeToggle.setAttribute('aria-pressed', isDark);
+    }
+
+    // ======= Simple Mobile Menu =======
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', ()=>{
+      const open = mobileMenu.style.display !== 'none';
+      mobileMenu.style.display = open ? 'none' : 'block';
+      hamburger.setAttribute('aria-expanded', !open);
+    });
+
+    // ======= Smooth fade-up on scroll =======
+    const faders = document.querySelectorAll('.fade-up');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in') });
+    },{threshold:0.12});
+    faders.forEach(f=>obs.observe(f));
+
+    // ======= Projects carousel (basic) =======
+    const slides = document.getElementById('slides');
+    const slideCount = slides.children.length;
+    const dots = document.querySelectorAll('.proj-dot');
+    let current = 0;
+    function goTo(i){
+      current = (i + slideCount) % slideCount;
+      slides.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach(d=>d.classList.remove('active'));
+      dots[current].classList.add('active');
+    }
+    document.getElementById('prevProj').addEventListener('click', ()=>goTo(current-1));
+    document.getElementById('nextProj').addEventListener('click', ()=>goTo(current+1));
+    dots.forEach(d=>d.addEventListener('click', ()=>goTo(Number(d.dataset.index))));
+    let autoplay = setInterval(()=>goTo(current+1), 6000);
+    slides.parentElement.addEventListener('mouseenter', ()=>clearInterval(autoplay));
+    slides.parentElement.addEventListener('mouseleave', ()=>autoplay = setInterval(()=>goTo(current+1), 6000));
+    goTo(0);
+
+    // ======= Resume preview: embed link =======
+    const pdfPreview = document.getElementById('pdfPreview');
+    const resumeLink = document.getElementById('resumeLink');
+    const embedBtn = document.getElementById('embedBtn');
+
+    function embedResume() {
+      const url = resumeLink.value.trim();
+      if(!url) return;
+      if(!url.startsWith('http')) return;
+      // Convert Google Drive link for embedding if needed
+      let embedUrl = url;
+      if (url.includes('drive.google.com')) {
+        embedUrl = url.replace("/view", "/preview").replace("?usp=sharing", "");
+      }
+      pdfPreview.src = embedUrl;
+    }
+
+    embedBtn.addEventListener('click', embedResume);
+
+    // Auto-embed on page load if a link is present
+    window.addEventListener('load', () => {
+      if(resumeLink.value && resumeLink.value !== 'YOUR_PUBLIC_RESUME_LINK_HERE') {
+        embedResume();
+      }
+    });
+
+    // ======= Accessibility: enable keyboard nav for buttons =======
+    document.querySelectorAll('.btn-ghost, .btn').forEach(b=>{
+      b.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') b.click(); });
+    });
+
+    // ======= Small U/X: close mobile menu when clicking link =======
+    document.querySelectorAll('#mobileMenu a, .nav-links a').forEach(a=>a.addEventListener('click', ()=>{
+        if(window.innerWidth < 980) {
+            mobileMenu.style.display = 'none';
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+    }));
+
+  </script>
+
+</body>
+</html>
+
