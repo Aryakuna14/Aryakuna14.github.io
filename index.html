@@ -99,12 +99,19 @@
 
     /* Hero */
     .hero{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
-    .hero-left h1{font-size:2.6rem;margin-bottom:0.4rem;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;color:transparent}
+    .hero-left h1{
+      font-size:2.6rem;
+      margin-bottom:0.4rem;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent
+    }
     .subtitle{color:var(--muted);font-weight:600;margin-bottom:1rem}
     .desc{color:var(--muted);max-width:60ch;margin-bottom:1.2rem}
 
     .cta{display:flex;gap:0.75rem;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;border-radius:999px;border:none;cursor:pointer;font-weight:700}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;border-radius:999px;border:none;cursor:pointer;font-weight:700;text-decoration: none;}
     .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
     .btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent);font-weight:700}
 
@@ -128,15 +135,6 @@
     .proj-dot{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,0.12)}
     .proj-dot.active{background:var(--accent)}
 
-    /* Projects grid fallback */
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
-
-    /* Resume preview */
-    .resume-actions{display:flex;gap:0.6rem;align-items:center}
-    input[type=file]{display:none}
-    .file-label{padding:0.55rem 0.9rem;border-radius:10px;border:1px dashed rgba(0,0,0,0.08);cursor:pointer}
-    .pdf-preview{width:100%;height:500px;border-radius:10px;border:1px solid rgba(0,0,0,0.06)}
-
     /* Footer */
     footer{color:white;text-align:center;padding:2rem 1rem}
 
@@ -151,7 +149,6 @@
     @media (max-width:640px){
       .wrap{padding:0.6rem}
       .card{padding:1rem}
-      .pdf-preview{height:360px}
     }
 
     /* small transitions */
@@ -229,7 +226,7 @@
         <div>
           <strong>Co-Owner & Marketing Head</strong>
           <div class="meta">Lowwkey | Bangalore & Mumbai — <span class="date">Sep 2024 - Present</span></div>
-          <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted)">
+          <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
             <li>Co-founded and launched a niche print-on-demand clothing brand and led its marketing strategy.</li>
             <li>Designed targeted digital campaigns and achieved efficient CPM of ₹50.</li>
             <li>Led collaborations with influencers and optimized user acquisition channels.</li>
@@ -239,11 +236,20 @@
         <div>
           <strong>Marketing Team Member</strong>
           <div class="meta">Dayananda Sagar College of Engineering — Oct 2024 - Present</div>
+           <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
+            <li>Develop and implement promotional strategies for major college events and student-led initiatives.</li>
+            <li>Create impactful marketing campaigns that enhance student engagement and strengthen public relations.</li>
+            <li>Foster key collaborations with internal and external partners to amplify event reach.</li>
+          </ul>
         </div>
 
         <div>
           <strong>Operations Team Member</strong>
           <div class="meta">IEDC — 2024 - Present</div>
+           <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
+            <li>Actively contribute to the planning and execution of innovation and entrepreneurship events on campus.</li>
+            <li>Support the project ideation process for student startups, helping to foster a vibrant startup culture.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -259,6 +265,10 @@
         <div>
           <strong>Class 12</strong>
           <div class="meta">DY Patil International School — 2021 - 2023 (Maths & CS)</div>
+        </div>
+        <div>
+          <strong>High School (Class 10)</strong>
+          <div class="meta">Bishop Cotton Boys' School — 2021</div>
         </div>
       </div>
     </section>
@@ -320,19 +330,9 @@
 
     <!-- RESUME -->
     <section id="resume" class="card fade-up">
-      <h2>Resume</h2>
-      <p style="color:var(--muted);margin-bottom:0.6rem">You can paste your public resume link below to embed it directly on the page.</p>
-
-      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:0.8rem;align-items:center">
-         <!--
-            IMPORTANT: Get the public share link for your "new resume.pdf" from Google Drive or GitHub.
-            Paste it into the value="" attribute of the input field below.
-          -->
-        <input id="resumeLink" type="url" placeholder="Paste public PDF link (https://...)" value="https://raw.githubusercontent.com/Aryakuna14/Aryakuna14.github.io/main/new%20resume.pdf" style="padding:0.55rem;border-radius:9px;border:1px solid rgba(0,0,0,0.06);flex-grow:1;" />
-        <button id="embedBtn" class="btn btn-primary">Embed Link</button>
-      </div>
-
-      <iframe id="pdfPreview" class="pdf-preview" title="Resume preview"> </iframe>
+        <h2>Resume</h2>
+        <p style="color:var(--muted);margin-bottom:1rem;">Click the button below to view or download my resume.</p>
+        <a class="btn btn-primary" href="https://raw.githubusercontent.com/Aryakuna14/Aryakuna14.github.io/main/new%20resume.pdf" target="_blank">📄 Download Resume</a>
     </section>
 
     <!-- CONTACT -->
@@ -411,21 +411,6 @@
     slides.parentElement.addEventListener('mouseleave', ()=>autoplay = setInterval(()=>goTo(current+1), 6000));
     goTo(0);
 
-    // ======= Resume preview: embed link =======
-    const pdfPreview = document.getElementById('pdfPreview');
-    const resumeLink = document.getElementById('resumeLink');
-    const embedBtn = document.getElementById('embedBtn');
-
-
-    embedBtn.addEventListener('click', embedResume);
-
-    // Auto-embed on page load if a link is present
-    window.addEventListener('load', () => {
-      if(resumeLink.value && resumeLink.value !== 'https://raw.githubusercontent.com/Aryakuna14/Aryakuna14.github.io/main/new%20resume.pdf') {
-        embedResume();
-      }
-    });
-
     // ======= Accessibility: enable keyboard nav for buttons =======
     document.querySelectorAll('.btn-ghost, .btn').forEach(b=>{
       b.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') b.click(); });
@@ -443,4 +428,6 @@
 
 </body>
 </html>
+
+
 
