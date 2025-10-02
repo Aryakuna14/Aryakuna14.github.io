@@ -416,17 +416,6 @@
     const resumeLink = document.getElementById('resumeLink');
     const embedBtn = document.getElementById('embedBtn');
 
-    function embedResume() {
-      const url = resumeLink.value.trim();
-      if(!url) return;
-      if(!url.startsWith('http')) return;
-      // Convert Google Drive link for embedding if needed
-      let embedUrl = url;
-      if (url.includes('drive.google.com')) {
-        embedUrl = url.replace("/view", "/preview").replace("?usp=sharing", "");
-      }
-      pdfPreview.src = embedUrl;
-    }
 
     embedBtn.addEventListener('click', embedResume);
 
