@@ -111,7 +111,7 @@
       color:transparent
     }
     .subtitle{color:var(--muted);font-weight:600;margin-bottom:1rem}
-    .desc{color:var(--muted);max-width:60ch;margin-bottom:1.2rem}
+    .desc{color:var(--muted);max-width:60ch;margin-bottom:1.2rem; text-align: justify;}
 
     .cta{display:flex;gap:0.75rem;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;border-radius:999px;border:none;cursor:pointer;font-weight:700;text-decoration: none;}
@@ -136,6 +136,7 @@
     .slide{min-width:100%;padding:1.2rem;background:var(--slide-bg);border-radius:10px}
     .project-links{margin-top: 1rem; display: flex; gap: 0.75rem;}
     .proj-controls{display:flex;gap:0.5rem;position:absolute;right:12px;top:12px}
+    .proj-dots-container {position:absolute;left:12px;bottom:12px;display:flex;gap:6px;padding: 4px;}
     .proj-dot{width:10px;height:10px;border-radius:50%;background:rgba(0,0,0,0.12)}
     .proj-dot.active{background:var(--accent)}
 
@@ -336,7 +337,7 @@
           <button id="nextProj" class="btn-ghost">▶</button>
         </div>
 
-        <div style="position:absolute;left:12px;bottom:12px;display:flex;gap:6px">
+        <div class="proj-dots-container">
           <div class="proj-dot" data-index="0"></div>
           <div class="proj-dot" data-index="1"></div>
           <div class="proj-dot" data-index="2"></div>
@@ -445,6 +446,7 @@
 
 </body>
 </html>
+
 
 
 
