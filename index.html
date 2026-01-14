@@ -4,36 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Arya Sharan — Engineer · Entrepreneur</title>
-  <link rel="icon" href="icon.jpg.jpeg" type="image/jpeg">
+
+  <link rel="icon" href="profile.jpg" type="image/jpeg">
 
   <meta name="description" content="Arya Sharan — 2nd year EEE student focused on Embedded Systems, Analog Electronics, and Entrepreneurship." />
-  <link rel="canonical" href="https://Aryakuna14.github.io/" />
   <meta name="theme-color" content="#050505" />
-
-  <meta property="og:title" content="Arya Sharan — Engineer · Entrepreneur" />
-  <meta property="og:description" content="2nd year EEE student focused on Embedded Systems, Analog Electronics, and Entrepreneurship." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://Aryakuna14.github.io/" />
-  <meta property="og:image" content="https://Aryakuna14.github.io/og-image.png" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Arya Sharan — Engineer · Entrepreneur" />
-  <meta name="twitter:description" content="2nd year EEE student focused on Embedded Systems, Analog Electronics, and Entrepreneurship." />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Arya Sharan",
-    "url": "https://Aryakuna14.github.io/",
-    "jobTitle": "Student / Entrepreneur",
-    "sameAs": [
-      "https://github.com/Aryakuna14",
-      "https://www.linkedin.com/in/arya-sharan-516319200/",
-      "https://www.instagram.com/axya1_7"
-    ]
-  }
-  </script>
 
   <style>
     /* ========== RLY NETWORK INSPIRED THEME (Ultra Dark) ========== */
@@ -42,7 +17,6 @@
       --surface: rgba(255, 255, 255, 0.02); /* Very subtle, transparent cards */
       --muted: #9ca3af; /* Cool grey for descriptions */
       --text: #ffffff; /* Bright White text */
-      --accent: #ffffff; /* White accents (Monochrome look) */
       --glass: rgba(5, 5, 5, 0.85); /* Dark Glass Nav */
       --radius: 24px; /* Smooth rounded corners */
       --border: 1px solid rgba(255, 255, 255, 0.15); /* Thin crisp lines */
@@ -55,7 +29,7 @@
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color:var(--text);
       background:var(--bg-1);
-      /* Adds a subtle spotlight effect at the top */
+      /* Spotlight effect */
       background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 60%);
       background-attachment: fixed;
       line-height:1.6;
@@ -64,8 +38,7 @@
     /* Nav */
     nav{position:fixed;left:0;right:0;top:0;width:100%;z-index:999; border-bottom: var(--border); background: var(--glass); backdrop-filter: blur(12px);}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem;}
-    .logo{font-weight:800;font-size:1.2rem;color:#fff; letter-spacing: -0.5px;}
-
+    
     .nav-links{display:flex;gap:1.5rem;align-items:center}
     .nav-links a{color:var(--muted);text-decoration:none;font-size:0.95rem;transition:0.2s}
     .nav-links a:hover{color:#fff;}
@@ -75,31 +48,31 @@
     .hamburger{display:none;padding:0.5rem;border-radius:8px}
 
     /* Layout */
-    .wrap{max-width:1100px;margin:100px auto 40px;padding:1.5rem}
+    .wrap{max-width:1100px;margin:110px auto 40px;padding:1.5rem}
     
-    /* Cards (Transparent & Outline style) */
+    /* Cards */
     .card{
         background: var(--surface);
         border: var(--border);
         border-radius:var(--radius);
-        padding:2.5rem;
+        padding:3rem;
         margin-bottom:2rem;
     }
 
-    /* Hero Section - Improved Spacing */
+    /* Hero Section (Desktop Default) */
     .hero{
         display:grid;
-        grid-template-columns: 1fr 380px; /* Side by side on large screens */
-        gap: 4rem; /* INCREASED GAP FOR SPACING */
+        grid-template-columns: 1fr 350px;
+        gap: 4rem;
         align-items:center;
     }
 
     .hero h1{
       font-size:3.5rem;
       letter-spacing: -1.5px;
-      line-height: 1.3; /* Increased space so 'y' doesn't get cut */
-      padding-bottom: 10px; /* Extra safety buffer */
-      margin-bottom:0.5rem;
+      line-height: 1.3; /* Fixed: Prevents 'y' from cutting off */
+      padding-bottom: 5px;
+      margin-bottom:1rem;
       background: linear-gradient(180deg, #fff 0%, #aaa 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -107,25 +80,33 @@
     .subtitle{color:#fff;font-weight:600;margin-bottom:1rem; font-size: 1.2rem;}
     .desc{color:var(--muted);max-width:55ch;margin-bottom:2rem; font-size: 1.05rem;}
 
-    /* Profile Avatar - Improved Spacing */
+    /* Profile Avatar */
     .profile{text-align:center;}
     .avatar{
-        width:160px; height:160px; /* Slightly larger */
+        width:180px; height:180px; 
         border-radius:50%;
         object-fit:cover;
         border: 2px solid rgba(255,255,255,0.1); 
-        margin-bottom: 1.5rem; /* MORE SPACE below image */
+        margin-bottom: 1.5rem;
     }
 
-    /* Buttons - Updated to force single line */
-    .cta{display:flex; gap:0.6rem; flex-wrap:nowrap; align-items:center;}
-    
-    /* Reduced side padding (1.4rem -> 1rem) so they fit better */
-    .btn{display:inline-flex;align-items:center;padding:0.8rem 1rem;border-radius:999px;font-weight:600;text-decoration: none;transition:0.2s; white-space: nowrap;}
+    /* Buttons (Desktop: Single Line) */
+    .cta{
+        display:flex; 
+        gap:0.6rem; 
+        flex-wrap:nowrap; /* Forces single line on Laptop */
+        align-items:center;
+    }
+    .btn{
+        display:inline-flex;align-items:center;
+        padding:0.8rem 1rem;
+        border-radius:999px;
+        font-weight:600;text-decoration: none;transition:0.2s; 
+        white-space: nowrap; /* Keeps text from breaking */
+    }
     
     .btn-primary{background:#fff;color:#000;border:1px solid #fff;}
     .btn-primary:hover{background:#ddd; border-color:#ddd;}
-    
     .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;}
     .btn-outline:hover{border-color:#fff;}
 
@@ -156,22 +137,45 @@
     /* Footer */
     footer{text-align:center;padding:3rem 1rem; color: var(--muted); border-top: var(--border);}
 
-    /* Responsive / Mobile Spacing Fixes */
+
+    /* =========================================
+       MOBILE OPTIMIZATIONS (The Fixes)
+       ========================================= */
     @media (max-width:1024px){
+      /* 1. Push content down so Profile Pic isn't cut off by logo */
+      .wrap{margin-top: 130px;} 
+      
+      /* 2. Reduce padding so text fits better on narrow screens */
+      .card{ padding: 1.5rem; } 
+      
+      /* 3. Stack layout: Image Top, Text Bottom */
       .hero{
           display:flex; 
-          flex-direction: column-reverse; /* Profile on TOP, Text on BOTTOM */
-          gap: 3rem; 
+          flex-direction: column-reverse;
+          gap: 1.5rem; 
           text-align: center;
-          padding-top: 2rem;
       }
+
+      /* 4. HIDE the duplicate Name/Bio under the photo (since big name is below) */
+      .profile > div:first-of-type, 
+      .profile > .meta {
+          display: none;
+      }
+      .avatar { margin-bottom: 0; }
+
+      /* 5. Allow buttons to WRAP on phone so they don't go out of frame */
+      .cta{ 
+          flex-wrap: wrap; 
+          justify-content: center; 
+          gap: 0.8rem;
+      }
+      
       .hero-left{
           display:flex; 
           flex-direction:column; 
           align-items:center;
       }
-      .cta{justify-content:center;}
-      .desc{margin-left: auto; margin-right: auto;}
+      
       .nav-links{display:none}
       .hamburger{display:block}
     }
@@ -182,7 +186,8 @@
   <nav>
     <div class="nav-inner">
       <div style="display:flex;gap:1rem;align-items:center">
-        <img src="icon.jpg.jpeg" alt="Logo" style="height:40px; width:40px; border-radius:50%; object-fit:cover;">
+        <img src="logo.png" alt="Logo" style="height:40px; width:40px; border-radius:50%; object-fit:cover;">
+        
         <div class="nav-links" id="navLinks">
           <a href="#home">Home</a>
           <a href="#experience">Experience</a>
@@ -218,7 +223,7 @@
         <h1>Arya Sharan</h1>
         <div class="subtitle">Engineer • Entrepreneur • Innovator</div>
         <p class="desc">
-            Electrical and Electronics Engineering (EEE) student focused on <strong>Embedded Systems and Digital Electronics</strong>, with a proven track record in operations and entrepreneurial ventures.
+            Electrical and Electronics Engineering (EEE) student focused on <strong>Embedded Systems and Analog Electronics</strong>, with a proven track record in operations and entrepreneurial ventures.
         </p>
 
         <div class="cta">
@@ -230,7 +235,7 @@
       </div>
 
       <aside class="hero-right profile">
-        <img src="profile.png" class="avatar" alt="Arya Sharan">
+        <img src="profile.jpg" class="avatar" alt="Arya Sharan">
         
         <div style="font-weight:800; font-size:1.4rem;">Arya Sharan</div>
         <div class="meta" style="margin-top:0.5rem;">Dayananda Sagar College of Engineering — BE (EEE)</div>
@@ -264,7 +269,7 @@
             <strong style="font-size:1.1rem; color:#fff;">Technical Intern</strong>
             <div class="meta">DESI Power | Bihar — <span class="date">Sep 2025 - Oct 2025</span></div>
             <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-              <li>Power Systems Analysis: Gained technical insights into the operation of decentralized power generation units and irrigation pumps.</li>
+              <li><strong>Power Systems Analysis:</strong> Gained technical insights into the operation of decentralized power generation units and irrigation pumps.</li>
               <li>Analyzed technical documentation to understand grid challenges and power distribution at a local level.</li>
             </ul>
         </div>
@@ -344,7 +349,6 @@
         <div class="slides" id="slides">
           
           <article class="slide">
-            
             <h3 style="color:#fff; margin-bottom:0.5rem;">🛍️ Lowwkey Brand Launch</h3>
             <p style="margin-bottom:0.5rem;">Built a print-on-demand e-commerce strategy, platform selection, UX and marketing funnel to launch a niche clothing brand.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tools:</strong> Shopify / Meta Ads / Supply Chain Management</p>
@@ -354,6 +358,7 @@
           </article>
 
           <article class="slide">
+             <img src="python.jpg" alt="Python Code" style="width:100%; height:250px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.1);">
 
             <h3 style="color:#fff; margin-bottom:0.5rem;">🐍 Python Learning Journey</h3>
             <p style="margin-bottom:0.5rem;">Working through a full-stack Python path to combine AI, data science and engineering projects into product-ready demos.</p>
@@ -364,6 +369,7 @@
           </article>
 
           <article class="slide">
+             <img src="radio.jpg" alt="Analog Radio Circuit" style="width:100%; height:250px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.1);">
 
             <h3 style="color:#fff; margin-bottom:0.5rem;">📻 Analog Radio Receiver & Power Management</h3>
             <p style="margin-bottom:0.5rem;">Designed and prototyped a functional radio receiver, demonstrating core competency in analog circuit design and power efficiency.</p>
