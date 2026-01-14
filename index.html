@@ -11,44 +11,75 @@
   <meta name="theme-color" content="#050505" />
 
   <style>
-    /* ========== RLY NETWORK INSPIRED THEME (Ultra Dark) ========== */
+    /* ========== GOD MODE THEME (Cyberpunk / Tech) ========== */
     :root{
-      --bg-1: #050505; /* Deep Matte Black */
-      --surface: rgba(255, 255, 255, 0.03); /* Slightly lighter for 3D effect */
-      --muted: #9ca3af; /* Cool grey for descriptions */
-      --text: #ffffff; /* Bright White text */
-      --glass: rgba(5, 5, 5, 0.85); /* Dark Glass Nav */
-      --radius: 24px; /* Smooth rounded corners */
-      --border: 1px solid rgba(255, 255, 255, 0.1); /* Thin crisp lines */
+      --bg-1: #050505; 
+      --surface: rgba(255, 255, 255, 0.03); 
+      --muted: #9ca3af; 
+      --text: #ffffff; 
+      --glass: rgba(5, 5, 5, 0.7); 
+      --radius: 24px; 
+      --border: 1px solid rgba(255, 255, 255, 0.1); 
+      --accent-glow: 0 0 20px rgba(255, 255, 255, 0.15);
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
+    *{box-sizing:border-box;margin:0;padding:0; cursor: none;} /* Hide default cursor */
+    html,body{height:100%; overflow-x: hidden;}
     
     body{
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color:var(--text);
       background:var(--bg-1);
-      /* Spotlight effect + Subtle Grid for Tech feel */
-      background-image: 
-        radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 60%);
-      background-attachment: fixed;
       line-height:1.6;
     }
 
-    /* === CUSTOM SCROLLBAR (New) === */
-    ::-webkit-scrollbar { width: 10px; }
+    /* === 1. PARTICLE BACKGROUND === */
+    #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1; /* Behind everything */
+        background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 80%);
+    }
+
+    /* === 2. CUSTOM CURSOR === */
+    .cursor-dot,
+    .cursor-outline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none;
+    }
+    .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: white;
+    }
+    .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+    }
+
+    /* === CUSTOM SCROLLBAR === */
+    ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #050505; }
-    ::-webkit-scrollbar-thumb { background: #333; border-radius: 5px; }
-    ::-webkit-scrollbar-thumb:hover { background: #555; }
+    ::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #666; }
 
     /* Nav */
-    nav{position:fixed;left:0;right:0;top:0;width:100%;z-index:999; border-bottom: var(--border); background: var(--glass); backdrop-filter: blur(12px);}
+    nav{position:fixed;left:0;right:0;top:0;width:100%;z-index:999; border-bottom: var(--border); background: var(--glass); backdrop-filter: blur(15px);}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem;}
     
     .nav-links{display:flex;gap:1.5rem;align-items:center}
-    .nav-links a{color:var(--muted);text-decoration:none;font-size:0.95rem;transition:0.2s}
-    .nav-links a:hover{color:#fff;}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:0.95rem;transition:0.3s; position:relative;}
+    .nav-links a:hover{color:#fff; text-shadow: 0 0 10px rgba(255,255,255,0.5);}
 
     .controls{display:flex;gap:0.5rem;}
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.4rem 0.8rem;border-radius:8px;cursor:pointer}
@@ -57,27 +88,23 @@
     /* Layout */
     .wrap{max-width:1100px;margin:110px auto 40px;padding:1.5rem}
     
-    /* Cards with 3D Float (New) */
+    /* Cards */
     .card{
         background: var(--surface);
         border: var(--border);
         border-radius:var(--radius);
         padding:3rem;
         margin-bottom:2rem;
-        /* Smooth transition for the hover glow */
-        transition: box-shadow 0.3s ease, border-color 0.3s ease;
-        /* Required for 3D tilt to look good */
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         transform-style: preserve-3d;
         transform: perspective(1000px);
     }
-
-    /* Hover Glow Effect */
     .card:hover {
-        border-color: rgba(255, 255, 255, 0.3);
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        border-color: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.8);
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero{
         display:grid;
         grid-template-columns: 1fr 350px;
@@ -85,16 +112,22 @@
         align-items:center;
     }
 
+    /* === 3. HOLOGRAPHIC TEXT === */
     .hero h1{
-      font-size:3.5rem;
-      letter-spacing: -1.5px;
-      line-height: 1.3; 
-      padding-bottom: 5px;
+      font-size:3.8rem;
+      letter-spacing: -2px;
+      line-height: 1.2; 
       margin-bottom:1rem;
-      background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+      background: linear-gradient(to right, #ffffff, #888888, #ffffff);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: shine 5s linear infinite;
     }
+    @keyframes shine {
+        to { background-position: 200% center; }
+    }
+
     .subtitle{color:#fff;font-weight:600;margin-bottom:1rem; font-size: 1.2rem;}
     .desc{color:var(--muted);max-width:55ch;margin-bottom:2rem; font-size: 1.05rem;}
 
@@ -108,34 +141,29 @@
         margin-bottom: 1.5rem;
         animation: pulse-glow 3s infinite ease-in-out; 
     }
-
     @keyframes pulse-glow {
       0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
-      50% { box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2); }
+      50% { box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.15); }
       100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
     }
 
     /* Buttons */
-    .cta{
-        display:flex; 
-        gap:0.6rem; 
-        flex-wrap:nowrap; 
-        align-items:center;
-    }
+    .cta{display:flex; gap:0.6rem; flex-wrap:nowrap; align-items:center;}
     .btn{
         display:inline-flex;align-items:center;
-        padding:0.8rem 1rem;
+        padding:0.8rem 1.2rem;
         border-radius:999px;
-        font-weight:600;text-decoration: none;transition:0.2s; 
-        white-space: nowrap; 
+        font-weight:600;text-decoration: none;transition:0.3s; 
+        white-space: nowrap; cursor: none; /* Custom cursor handling */
     }
     
     .btn-primary{background:#fff;color:#000;border:1px solid #fff;}
-    .btn-primary:hover{background:#ddd; border-color:#ddd;}
+    .btn-primary:hover{transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.4);}
+    
     .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;}
-    .btn-outline:hover{border-color:#fff;}
+    .btn-outline:hover{border-color:#fff; background: rgba(255,255,255,0.05);}
 
-    /* Skills Grid */
+    /* Skills */
     .skills{display:flex;flex-wrap:wrap;gap:0.8rem}
     .skill{
         border: 1px solid rgba(255,255,255,0.15);
@@ -143,13 +171,14 @@
         padding: 0.6rem 1.2rem;
         border-radius: 99px;
         font-size: 0.9rem;
-        transition: transform 0.2s ease, background 0.2s ease;
+        transition: all 0.3s ease;
+        background: rgba(0,0,0,0.3);
     }
     .skill:hover{
         border-color: #fff; 
         color: #fff; 
-        background: rgba(255,255,255,0.1);
-        transform: translateY(-3px); /* Floating effect on hover */
+        transform: translateY(-5px); 
+        box-shadow: 0 5px 15px rgba(255,255,255,0.1);
     }
 
     /* Experience */
@@ -159,7 +188,7 @@
     /* Carousel */
     .carousel{position:relative;overflow:hidden;border-radius:12px; border: var(--border);}
     .slides{display:flex;transition:transform 0.5s ease}
-    .slide{min-width:100%;padding:2rem;background:#0a0a0a;}
+    .slide{min-width:100%;padding:2rem;background:rgba(0,0,0,0.5);}
     .proj-controls{position:absolute;right:1rem;top:1rem; display:flex; gap:0.5rem;}
     .proj-dots-container {position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:6px;padding: 4px;}
     .proj-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2)}
@@ -168,38 +197,31 @@
     /* Footer */
     footer{text-align:center;padding:3rem 1rem; color: var(--muted); border-top: var(--border);}
 
-    /* =========================================
-       MOBILE OPTIMIZATIONS
-       ========================================= */
+    /* Mobile */
     @media (max-width:1024px){
       .wrap{margin-top: 130px;} 
       .card{ padding: 1.5rem; } 
-      .hero{
-          display:flex; 
-          flex-direction: column-reverse;
-          gap: 1.5rem; 
-          text-align: center;
-      }
-      .profile > div:first-of-type, 
-      .profile > .meta { display: none; }
+      .hero{display:flex; flex-direction: column-reverse; gap: 1.5rem; text-align: center;}
+      .profile > div:first-of-type, .profile > .meta { display: none; }
       .avatar { margin-bottom: 0; }
-      .cta{ 
-          flex-wrap: wrap; 
-          justify-content: center; 
-          gap: 0.8rem;
-      }
-      .hero-left{
-          display:flex; 
-          flex-direction:column; 
-          align-items:center;
-      }
+      .cta{ flex-wrap: wrap; justify-content: center; gap: 0.8rem;}
+      .hero-left{display:flex; flex-direction:column; align-items:center;}
       .nav-links{display:none}
       .hamburger{display:block}
+      
+      /* Disable custom cursor on phone */
+      *{cursor: auto;}
+      .cursor-dot, .cursor-outline {display: none;}
     }
   </style>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+
+  <div id="particles-js"></div>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
 
   <nav>
     <div class="nav-inner">
@@ -236,7 +258,8 @@
   </nav>
 
   <main class="wrap">
-    <section id="home" class="card hero" aria-label="Hero" data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.2">
+    
+    <section id="home" class="card hero" data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.2">
       <div class="hero-left">
         <h1>Arya Sharan</h1>
         <div class="subtitle"><span class="typewriter"></span></div>
@@ -435,25 +458,80 @@
 
  <script>
     // ======= 1. FORCE TOP SCROLL =======
-    if (history.scrollRestoration) {
-        history.scrollRestoration = 'manual';
-    }
+    if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
     window.scrollTo(0, 0);
 
-    // ======= 2. ANIMATIONS (AOS & Typed & Tilt) =======
-    // Load AOS (Scroll Animation)
+    // ======= 2. CUSTOM CURSOR LOGIC =======
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+    
+    // Only active on desktop
+    if(window.innerWidth > 1024){
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            
+            // Dot follows instantly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            
+            // Outline follows with lag (smoothness)
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+        
+        // Add hover effect to clickable items
+        const clickables = document.querySelectorAll('a, button, .card');
+        clickables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.style.width = '60px';
+                cursorOutline.style.height = '60px';
+                cursorOutline.style.backgroundColor = 'rgba(255,255,255,0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.style.width = '40px';
+                cursorOutline.style.height = '40px';
+                cursorOutline.style.backgroundColor = 'transparent';
+            });
+        });
+    }
+
+    // ======= 3. BACKGROUND PARTICLES =======
+    const scriptParticles = document.createElement('script');
+    scriptParticles.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
+    scriptParticles.onload = () => {
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.2, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.15, "width": 1 },
+                "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } } }
+            },
+            "retina_detect": true
+        });
+    };
+    document.head.appendChild(scriptParticles);
+
+    // ======= 4. ANIMATIONS (AOS & Typed & Tilt) =======
     const scriptAOS = document.createElement('script');
     scriptAOS.src = "https://unpkg.com/aos@2.3.1/dist/aos.js";
     scriptAOS.onload = () => { AOS.init({ duration: 800, once: true }); };
     document.head.appendChild(scriptAOS);
 
-    // Load Vanilla Tilt (3D Effect)
     const scriptTilt = document.createElement('script');
     scriptTilt.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js";
-    // We don't need an onload init because we are using data-tilt attributes in HTML
     document.head.appendChild(scriptTilt);
 
-    // Load Typed.js (Typing Effect)
     const scriptTyped = document.createElement('script');
     scriptTyped.src = "https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js";
     scriptTyped.onload = () => {
@@ -467,18 +545,18 @@
     };
     document.head.appendChild(scriptTyped);
 
-    // ======= 3. MOBILE MENU LOGIC =======
+    // ======= 5. MOBILE MENU & CAROUSEL =======
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     
-    // Toggle Menu
-    hamburger.addEventListener('click', ()=>{
-      const open = mobileMenu.style.display !== 'none';
-      mobileMenu.style.display = open ? 'none' : 'block';
-      hamburger.setAttribute('aria-expanded', !open);
-    });
+    if(hamburger){
+        hamburger.addEventListener('click', ()=>{
+          const open = mobileMenu.style.display !== 'none';
+          mobileMenu.style.display = open ? 'none' : 'block';
+          hamburger.setAttribute('aria-expanded', !open);
+        });
+    }
 
-    // Close menu when clicking a link
     document.querySelectorAll('#mobileMenu a, .nav-links a').forEach(a => {
       a.addEventListener('click', () => {
         if(window.innerWidth < 1024) {
@@ -488,7 +566,6 @@
       });
     });
     
-    // ======= 4. PROJECTS CAROUSEL =======
     const slides = document.getElementById('slides');
     if(slides){
         const slideCount = slides.children.length;
@@ -506,7 +583,6 @@
         document.getElementById('nextProj').addEventListener('click', ()=>goTo(current+1));
         dots.forEach(d=>d.addEventListener('click', ()=>goTo(Number(d.dataset.index))));
         
-        // Auto play
         let autoplay = setInterval(()=>goTo(current+1), 6000);
         slides.parentElement.addEventListener('mouseenter', ()=>clearInterval(autoplay));
         slides.parentElement.addEventListener('mouseleave', ()=>autoplay = setInterval(()=>goTo(current+1), 6000));
