@@ -24,7 +24,17 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0; cursor: none;} /* Hide default cursor */
-    html,body{height:100%; overflow-x: hidden;}
+    html,body{
+        /* Changed from height:100% to min-height */
+        min-height: 100%; 
+        overflow-x: hidden;
+    }
+    
+    /* ADD THIS to make sure your content sits ABOVE the particles */
+    .wrap {
+        position: relative;
+        z-index: 2;
+    }
     
     body{
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
