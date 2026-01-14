@@ -115,9 +115,11 @@
         margin-bottom: 1.5rem; /* MORE SPACE below image */
     }
 
-    /* Buttons */
-    .cta{display:flex;gap:1rem;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;padding:0.8rem 1.4rem;border-radius:99px;font-weight:600;text-decoration: none;transition:0.2s}
+    /* Buttons - Updated to force single line */
+    .cta{display:flex; gap:0.6rem; flex-wrap:nowrap; align-items:center;}
+    
+    /* Reduced side padding (1.4rem -> 1rem) so they fit better */
+    .btn{display:inline-flex;align-items:center;padding:0.8rem 1rem;border-radius:999px;font-weight:600;text-decoration: none;transition:0.2s; white-space: nowrap;}
     
     .btn-primary{background:#fff;color:#000;border:1px solid #fff;}
     .btn-primary:hover{background:#ddd; border-color:#ddd;}
