@@ -88,6 +88,13 @@
         object-fit:cover;
         border: 2px solid rgba(255,255,255,0.1); 
         margin-bottom: 1.5rem;
+        animation: pulse-glow 3s infinite ease-in-out; 
+    }
+
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
+      50% { box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
     }
 
     /* Buttons (Desktop: Single Line) */
@@ -180,6 +187,7 @@
       .hamburger{display:block}
     }
   </style>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -218,10 +226,10 @@
   </nav>
 
   <main class="wrap">
-    <section id="home" class="card hero" aria-label="Hero">
+    <section id="home" class="card hero" aria-label="Hero" data-aos="fade-up">
       <div class="hero-left">
         <h1>Arya Sharan</h1>
-        <div class="subtitle">Engineer • Entrepreneur • Innovator</div>
+        <div class="subtitle"><span class="typewriter"></span></div>
         <p class="desc">
             Electrical and Electronics Engineering (EEE) student focused on <strong>Embedded Systems and Digital Electronics</strong>, with a proven track record in operations and entrepreneurial ventures.
         </p>
@@ -243,7 +251,7 @@
       </aside>
     </section>
 
-    <section id="experience" class="card" tabindex="0">
+    <section id="experience" class="card" tabindex="0" data-aos="fade-up">
       <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Experience</h2>
       <div style="display:grid;gap:2rem">
         
@@ -304,7 +312,7 @@
       </div>
     </section>
 
-    <section id="education" class="card">
+    <section id="education" class="card" data-aos="fade-up">
       <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Education</h2>
       <div style="display:flex;flex-direction:column;gap:1.5rem">
         <div>
@@ -322,7 +330,7 @@
       </div>
     </section>
 
-    <section id="skills" class="card">
+    <section id="skills" class="card" data-aos="fade-up">
       <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Skills</h2>
       <div class="skills">
         <div class="skill">Embedded Systems</div>
@@ -342,7 +350,7 @@
       </div>
     </section>
 
-    <section id="projects" class="card">
+    <section id="projects" class="card" data-aos="fade-up">
       <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Projects</h2>
 
       <div class="carousel" aria-roledescription="carousel">
@@ -358,7 +366,6 @@
           </article>
 
           <article class="slide">
-
             <h3 style="color:#fff; margin-bottom:0.5rem;">🐍 Python Learning Journey</h3>
             <p style="margin-bottom:0.5rem;">Working through a full-stack Python path to combine AI, data science and engineering projects into product-ready demos.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Learning:</strong> Python, Pandas, NumPy, basic ML pipelines</p>
@@ -368,7 +375,6 @@
           </article>
 
           <article class="slide">
-
             <h3 style="color:#fff; margin-bottom:0.5rem;">📻 Analog Radio Receiver & Power Management</h3>
             <p style="margin-bottom:0.5rem;">Designed and prototyped a functional radio receiver, demonstrating core competency in analog circuit design and power efficiency.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Analog Electronics / Power Management Circuits / PCB Prototyping</p>
@@ -393,13 +399,13 @@
 
     </section>
 
-    <section id="resume" class="card">
+    <section id="resume" class="card" data-aos="zoom-in">
         <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Resume</h2>
         <p style="color:var(--muted);margin-bottom:1.5rem;">Click the button below to view or download my resume.</p>
         <a class="btn btn-primary" href="Updated%20Resume.pdf" target="_blank">📄 Download Resume</a>
     </section>
 
-    <section id="contact" class="card">
+    <section id="contact" class="card" data-aos="fade-up">
       <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Get in touch</h2>
       <div style="display:flex;gap:1rem;flex-wrap:wrap">
         <a class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px;" href="mailto:aryasharan47@gmail.com">📧 aryasharan47@gmail.com</a>
@@ -417,57 +423,79 @@
     </div>
   </footer>
 
-  <script>
-    // ======= Simple Mobile Menu =======
+ <script>
+    // ======= 1. FORCE TOP SCROLL =======
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // ======= 2. ANIMATIONS (AOS & Typed) =======
+    // Load AOS (Scroll Animation)
+    const scriptAOS = document.createElement('script');
+    scriptAOS.src = "https://unpkg.com/aos@2.3.1/dist/aos.js";
+    scriptAOS.onload = () => { AOS.init({ duration: 800, once: true }); };
+    document.head.appendChild(scriptAOS);
+
+    // Load Typed.js (Typing Effect)
+    const scriptTyped = document.createElement('script');
+    scriptTyped.src = "https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js";
+    scriptTyped.onload = () => {
+        new Typed('.typewriter', {
+            strings: ['Engineer.', 'Entrepreneur.', 'Innovator.', 'Builder.'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true,
+            backDelay: 1500
+        });
+    };
+    document.head.appendChild(scriptTyped);
+
+    // ======= 3. MOBILE MENU LOGIC =======
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
+    
+    // Toggle Menu
     hamburger.addEventListener('click', ()=>{
       const open = mobileMenu.style.display !== 'none';
       mobileMenu.style.display = open ? 'none' : 'block';
       hamburger.setAttribute('aria-expanded', !open);
     });
 
-    // ======= Projects carousel =======
-    const slides = document.getElementById('slides');
-    const slideCount = slides.children.length;
-    const dots = document.querySelectorAll('.proj-dot');
-    let current = 0;
-    function goTo(i){
-      current = (i + slideCount) % slideCount;
-      slides.style.transform = `translateX(-${current * 100}%)`;
-      dots.forEach(d=>d.classList.remove('active'));
-      dots[current].classList.add('active');
-    }
-    document.getElementById('prevProj').addEventListener('click', ()=>goTo(current-1));
-    document.getElementById('nextProj').addEventListener('click', ()=>goTo(current+1));
-    dots.forEach(d=>d.addEventListener('click', ()=>goTo(Number(d.dataset.index))));
-    
-    // Auto play carousel
-    let autoplay = setInterval(()=>goTo(current+1), 6000);
-    slides.parentElement.addEventListener('mouseenter', ()=>clearInterval(autoplay));
-    slides.parentElement.addEventListener('mouseleave', ()=>autoplay = setInterval(()=>goTo(current+1), 6000));
-    goTo(0);
-
-    // ======= Accessibility =======
-    document.querySelectorAll('.btn-ghost, .btn').forEach(b=>{
-      b.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') b.click(); });
-    });
-
-    // ======= Close mobile menu on click =======
-    document.querySelectorAll('#mobileMenu a, .nav-links a').forEach(a=>a.addEventListener('click', ()=>{
+    // Close menu when clicking a link
+    document.querySelectorAll('#mobileMenu a, .nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
         if(window.innerWidth < 1024) {
             mobileMenu.style.display = 'none';
             hamburger.setAttribute('aria-expanded', 'false');
         }
-    }));
-
-    // ======= FORCE TOP SCROLL ON LOAD =======
-    if (history.scrollRestoration) {
-        history.scrollRestoration = 'manual';
+      });
+    });
+    
+    // ======= 4. PROJECTS CAROUSEL =======
+    const slides = document.getElementById('slides');
+    if(slides){
+        const slideCount = slides.children.length;
+        const dots = document.querySelectorAll('.proj-dot');
+        let current = 0;
+        
+        function goTo(i){
+          current = (i + slideCount) % slideCount;
+          slides.style.transform = `translateX(-${current * 100}%)`;
+          dots.forEach(d=>d.classList.remove('active'));
+          if(dots[current]) dots[current].classList.add('active');
+        }
+        
+        document.getElementById('prevProj').addEventListener('click', ()=>goTo(current-1));
+        document.getElementById('nextProj').addEventListener('click', ()=>goTo(current+1));
+        dots.forEach(d=>d.addEventListener('click', ()=>goTo(Number(d.dataset.index))));
+        
+        // Auto play
+        let autoplay = setInterval(()=>goTo(current+1), 6000);
+        slides.parentElement.addEventListener('mouseenter', ()=>clearInterval(autoplay));
+        slides.parentElement.addEventListener('mouseleave', ()=>autoplay = setInterval(()=>goTo(current+1), 6000));
+        goTo(0);
     }
-    window.scrollTo(0, 0);
-
   </script>
-
 </body>
 </html>
