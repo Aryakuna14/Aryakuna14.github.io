@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Arya Sharan — Engineer · Entrepreneur</title>
 
-  <meta name="description" content="Arya Sharan — 2nd year EEE student focused on Embedded Systems, Digital Electronics, and Entrepreneurship." />
+  <meta name="description" content="Arya Sharan — 2nd year EEE student focused on Embedded Systems, Analog Electronics, and Entrepreneurship." />
   <link rel="canonical" href="https://Aryakuna14.github.io/" />
-  <meta name="theme-color" content="#667eea" />
+  <meta name="theme-color" content="#050505" />
 
   <meta property="og:title" content="Arya Sharan — Engineer · Entrepreneur" />
-  <meta property="og:description" content="2nd year EEE student focused on Embedded Systems, Digital Electronics, and Entrepreneurship." />
+  <meta property="og:description" content="2nd year EEE student focused on Embedded Systems, Analog Electronics, and Entrepreneurship." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://Aryakuna14.github.io/" />
   <meta property="og:image" content="https://Aryakuna14.github.io/og-image.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Arya Sharan — Engineer · Entrepreneur" />
-  <meta name="twitter:description" content="2nd year EEE student focused on Embedded Systems, Digital Electronics, and Entrepreneurship." />
+  <meta name="twitter:description" content="2nd year EEE student focused on Embedded Systems, Analog Electronics, and Entrepreneurship." />
 
   <script type="application/ld+json">
   {
@@ -34,8 +34,8 @@
   }
   </script>
 
-<style>
-    /* ========== RLY NETWORK INSPIRED THEME ========== */
+  <style>
+    /* ========== RLY NETWORK INSPIRED THEME (Ultra Dark) ========== */
     :root{
       --bg-1: #050505; /* Deep Matte Black */
       --surface: rgba(255, 255, 255, 0.02); /* Very subtle, transparent cards */
@@ -74,18 +74,25 @@
     .hamburger{display:none;padding:0.5rem;border-radius:8px}
 
     /* Layout */
-    .wrap{max-width:1000px;margin:100px auto 40px;padding:1.5rem}
+    .wrap{max-width:1100px;margin:100px auto 40px;padding:1.5rem}
     
     /* Cards (Transparent & Outline style) */
     .card{
         background: var(--surface);
-        border: var(--border); /* The thin line look */
+        border: var(--border);
         border-radius:var(--radius);
         padding:2.5rem;
         margin-bottom:2rem;
     }
 
-    /* Hero Typography */
+    /* Hero Section - Improved Spacing */
+    .hero{
+        display:grid;
+        grid-template-columns: 1fr 380px; /* Side by side on large screens */
+        gap: 4rem; /* INCREASED GAP FOR SPACING */
+        align-items:center;
+    }
+
     .hero h1{
       font-size:3.5rem;
       letter-spacing: -1.5px;
@@ -98,19 +105,23 @@
     .subtitle{color:#fff;font-weight:600;margin-bottom:1rem; font-size: 1.2rem;}
     .desc{color:var(--muted);max-width:55ch;margin-bottom:2rem; font-size: 1.05rem;}
 
-    /* Profile Avatar */
+    /* Profile Avatar - Improved Spacing */
     .profile{text-align:center;}
-    .avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;border: 2px solid rgba(255,255,255,0.1); margin-bottom: 1rem;}
+    .avatar{
+        width:160px; height:160px; /* Slightly larger */
+        border-radius:50%;
+        object-fit:cover;
+        border: 2px solid rgba(255,255,255,0.1); 
+        margin-bottom: 1.5rem; /* MORE SPACE below image */
+    }
 
-    /* Buttons (High Contrast) */
+    /* Buttons */
     .cta{display:flex;gap:1rem;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;padding:0.8rem 1.4rem;border-radius:99px;font-weight:600;text-decoration: none;transition:0.2s}
     
-    /* Primary: White button, Black text */
     .btn-primary{background:#fff;color:#000;border:1px solid #fff;}
     .btn-primary:hover{background:#ddd; border-color:#ddd;}
     
-    /* Outline: Transparent button, White text */
     .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;}
     .btn-outline:hover{border-color:#fff;}
 
@@ -134,21 +145,35 @@
     .slides{display:flex;transition:transform 0.5s ease}
     .slide{min-width:100%;padding:2rem;background:#0a0a0a;}
     .proj-controls{position:absolute;right:1rem;top:1rem; display:flex; gap:0.5rem;}
+    .proj-dots-container {position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:6px;padding: 4px;}
+    .proj-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2)}
+    .proj-dot.active{background:#fff}
 
     /* Footer */
     footer{text-align:center;padding:3rem 1rem; color: var(--muted); border-top: var(--border);}
 
-    /* Mobile */
-    @media (max-width:980px){
-      .hero{display:flex; flex-direction: column-reverse;}
+    /* Responsive / Mobile Spacing Fixes */
+    @media (max-width:1024px){
+      .hero{
+          display:flex; 
+          flex-direction: column-reverse; /* Profile on TOP, Text on BOTTOM */
+          gap: 3rem; 
+          text-align: center;
+          padding-top: 2rem;
+      }
+      .hero-left{
+          display:flex; 
+          flex-direction:column; 
+          align-items:center;
+      }
+      .cta{justify-content:center;}
+      .desc{margin-left: auto; margin-right: auto;}
       .nav-links{display:none}
       .hamburger{display:block}
     }
   </style>
-  
 </head>
 <body>
-  <div class="bg-animation" aria-hidden="true"></div>
 
   <nav>
     <div class="nav-inner">
@@ -166,20 +191,19 @@
       </div>
 
       <div class="controls">
-        <button id="themeToggle" title="Toggle theme" class="btn-ghost" aria-pressed="false">🌙</button>
         <button id="hamburger" class="hamburger btn-ghost" aria-expanded="false">☰</button>
       </div>
     </div>
 
-    <div id="mobileMenu" style="display:none;margin-top:0.6rem;" class="card">
+    <div id="mobileMenu" style="display:none;margin-top:0.6rem; background: #000; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1rem;">
       <div style="display:flex;flex-direction:column;gap:0.4rem">
-        <a href="#home">Home</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" style="color:#fff; text-decoration:none; padding:0.5rem; display:block;">Home</a>
+        <a href="#experience" style="color:#fff; text-decoration:none; padding:0.5rem; display:block;">Experience</a>
+        <a href="#education" style="color:#fff; text-decoration:none; padding:0.5rem; display:block;">Education</a>
+        <a href="#skills" style="color:#fff; text-decoration:none; padding:0.5rem; display:block;">Skills</a>
+        <a href="#projects" style="color:#fff; text-decoration:none; padding:0.5rem; display:block;">Projects</a>
+        <a href="#resume" style="color:#fff; text-decoration:none; padding:0.5rem; display:block;">Resume</a>
+        <a href="#contact" style="color:#fff; text-decoration:none; padding:0.5rem; display:block;">Contact</a>
       </div>
     </div>
   </nav>
@@ -190,7 +214,7 @@
         <h1>Arya Sharan</h1>
         <div class="subtitle">Engineer • Entrepreneur • Innovator</div>
         <p class="desc">
-            Electrical and Electronics Engineering (EEE) student focused on <strong>Embedded Systems and Digital Electronics</strong>, with a proven track record in operations and entrepreneurial ventures.
+            Electrical and Electronics Engineering (EEE) student focused on <strong>Embedded Systems and Analog Electronics</strong>, with a proven track record in operations and entrepreneurial ventures.
         </p>
 
         <div class="cta">
@@ -202,19 +226,20 @@
       </div>
 
       <aside class="hero-right profile">
-        <img src="profile.png" class="avatar" alt="Arya Sharan" style="object-fit: cover;">
-        <div style="font-weight:800">Arya Sharan</div>
-        <div class="meta">Dayananda Sagar College of Engineering — BE (EEE)</div>
-        <div style="margin-top:0.7rem;color:var(--muted);font-weight:700">Bangalore • +91 91106 48489</div>
+        <img src="profile.jpg" class="avatar" alt="Arya Sharan">
+        
+        <div style="font-weight:800; font-size:1.4rem;">Arya Sharan</div>
+        <div class="meta" style="margin-top:0.5rem;">Dayananda Sagar College of Engineering — BE (EEE)</div>
+        <div style="margin-top:0.5rem;color:var(--muted);font-weight:600">Bangalore • +91 91106 48489</div>
       </aside>
     </section>
 
-    <section id="experience" class="card fade-up" tabindex="0">
-      <h2>Experience</h2>
-      <div style="display:grid;gap:1.5rem">
+    <section id="experience" class="card" tabindex="0">
+      <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Experience</h2>
+      <div style="display:grid;gap:2rem">
         
         <div>
-          <strong>Community Volunteer & Content Team Member</strong>
+          <strong style="font-size:1.1rem; color:#fff;">Community Volunteer & Content Team Member</strong>
           <div class="meta">Under 25 DSCE | Bangalore — <span class="date">Sep 2025 - Present</span></div>
           <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
             <li>Facilitate on-ground logistics and attendee management for community events to ensure seamless execution.</li>
@@ -223,7 +248,7 @@
         </div>
 
         <div>
-            <strong>Core Organizing Committee</strong>
+            <strong style="font-size:1.1rem; color:#fff;">Core Organizing Committee</strong>
             <div class="meta">ICISPES 2025 (DSCE) | Bangalore — <span class="date">Dec 2025</span></div>
             <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
               <li>Key role in hosting the International Conference on Intelligent Systems in Power Engineering, coordinating between researchers and experts.</li>
@@ -232,7 +257,7 @@
         </div>
 
         <div>
-            <strong>Technical Intern</strong>
+            <strong style="font-size:1.1rem; color:#fff;">Technical Intern</strong>
             <div class="meta">DESI Power | Bihar — <span class="date">Sep 2025 - Oct 2025</span></div>
             <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
               <li><strong>Power Systems Analysis:</strong> Gained technical insights into the operation of decentralized power generation units and irrigation pumps.</li>
@@ -241,7 +266,7 @@
         </div>
 
         <div>
-          <strong>PR Team Member</strong>
+          <strong style="font-size:1.1rem; color:#fff;">PR Team Member</strong>
           <div class="meta">Dayananda Sagar College of Engineering — <span class="date">Oct 2024 - Present</span></div>
            <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
             <li>Develop and implement promotional strategies for major college events and student-led initiatives.</li>
@@ -250,7 +275,7 @@
         </div>
 
         <div>
-            <strong>Operations Team Member</strong>
+            <strong style="font-size:1.1rem; color:#fff;">Operations Team Member</strong>
             <div class="meta">IEDC — <span class="date">Nov 2024 - Sep 2025</span></div>
              <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
               <li>Actively contributed to the planning and execution of innovation and entrepreneurship events (E-Summit).</li>
@@ -259,7 +284,7 @@
         </div>
 
         <div>
-          <strong>Co-Owner & Marketing Head</strong>
+          <strong style="font-size:1.1rem; color:#fff;">Co-Owner & Marketing Head</strong>
           <div class="meta">Lowwkey | Bangalore & Mumbai — <span class="date">Sep 2024 - May 2025</span></div>
           <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
             <li>Co-founded and launched a niche print-on-demand clothing brand.</li>
@@ -270,29 +295,29 @@
       </div>
     </section>
 
-    <section id="education" class="card fade-up">
-      <h2>Education</h2>
-      <div style="display:flex;flex-direction:column;gap:0.6rem">
+    <section id="education" class="card">
+      <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Education</h2>
+      <div style="display:flex;flex-direction:column;gap:1.5rem">
         <div>
-          <strong>Bachelor of Engineering - Electrical & Electronics</strong>
+          <strong style="font-size:1.1rem; color:#fff;">Bachelor of Engineering - Electrical & Electronics</strong>
           <div class="meta">Dayananda Sagar College of Engineering — 2024 - 2028</div>
         </div>
         <div>
-          <strong>Class 12</strong>
+          <strong style="font-size:1.1rem; color:#fff;">Class 12</strong>
           <div class="meta">DY Patil International School — 2021 - 2023 (Maths & CS)</div>
         </div>
         <div>
-          <strong>High School (Class 10)</strong>
+          <strong style="font-size:1.1rem; color:#fff;">High School (Class 10)</strong>
           <div class="meta">Bishop Cotton Boys' School — 2021</div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="card fade-up">
-      <h2>Skills</h2>
+    <section id="skills" class="card">
+      <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Skills</h2>
       <div class="skills">
         <div class="skill">Embedded Systems</div>
-        <div class="skill">Digital Circuits</div>
+        <div class="skill">Analog Circuits</div>
         <div class="skill">PCB Design</div>
         <div class="skill">Python</div>
         <div class="skill">C / C++</div>
@@ -306,36 +331,42 @@
       </div>
     </section>
 
-    <section id="projects" class="card fade-up">
-      <h2>Projects</h2>
+    <section id="projects" class="card">
+      <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Projects</h2>
 
       <div class="carousel" aria-roledescription="carousel">
         <div class="slides" id="slides">
           
           <article class="slide">
-            <h3>📻 Analog Radio Receiver & Power Management</h3>
-            <p>Designed and prototyped a functional radio receiver, demonstrating core competency in analog circuit design and power efficiency.</p>
-            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Analog Electronics / Power Management Circuits / PCB Prototyping</p>
-            <div class="project-links">
-                <a href="F%20(2).pdf" class="btn btn-outline" target="_blank">View Project</a>
-            </div>
-          </article>
-
-          <article class="slide">
-            <h3>🛍️ Lowwkey Brand Launch</h3>
-            <p>Built a print-on-demand e-commerce strategy, platform selection, UX and marketing funnel to launch a niche clothing brand.</p>
+            <img src="lowwkey.jpg" alt="Lowwkey Brand" style="width:100%; height:250px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.1);">
+            
+            <h3 style="color:#fff; margin-bottom:0.5rem;">🛍️ Lowwkey Brand Launch</h3>
+            <p style="margin-bottom:0.5rem;">Built a print-on-demand e-commerce strategy, platform selection, UX and marketing funnel to launch a niche clothing brand.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tools:</strong> Shopify / Meta Ads / Supply Chain Management</p>
-            <div class="project-links">
+            <div class="project-links" style="margin-top:1rem;">
                 <a href="https://www.instagram.com/lowwkey.shop/" class="btn btn-outline" target="_blank">View Live</a>
             </div>
           </article>
 
           <article class="slide">
-            <h3>🐍 Python Learning Journey</h3>
-            <p>Working through a full-stack Python path to combine AI, data science and engineering projects into product-ready demos.</p>
+             <img src="python.jpg" alt="Python Code" style="width:100%; height:250px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.1);">
+
+            <h3 style="color:#fff; margin-bottom:0.5rem;">🐍 Python Learning Journey</h3>
+            <p style="margin-bottom:0.5rem;">Working through a full-stack Python path to combine AI, data science and engineering projects into product-ready demos.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Learning:</strong> Python, Pandas, NumPy, basic ML pipelines</p>
-            <div class="project-links">
+            <div class="project-links" style="margin-top:1rem;">
                 <a href="https://github.com/Aryakuna14" class="btn btn-outline" target="_blank">View Code</a>
+            </div>
+          </article>
+
+          <article class="slide">
+             <img src="radio.jpg" alt="Analog Radio Circuit" style="width:100%; height:250px; object-fit:cover; border-radius:12px; margin-bottom:1.5rem; border:1px solid rgba(255,255,255,0.1);">
+
+            <h3 style="color:#fff; margin-bottom:0.5rem;">📻 Analog Radio Receiver & Power Management</h3>
+            <p style="margin-bottom:0.5rem;">Designed and prototyped a functional radio receiver, demonstrating core competency in analog circuit design and power efficiency.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Analog Electronics / Power Management Circuits / PCB Prototyping</p>
+            <div class="project-links" style="margin-top:1rem;">
+                <a href="F%20(2).pdf" class="btn btn-outline" target="_blank">View Project</a>
             </div>
           </article>
 
@@ -355,52 +386,31 @@
 
     </section>
 
-    <section id="resume" class="card fade-up">
-        <h2>Resume</h2>
-        <p style="color:var(--muted);margin-bottom:1rem;">Click the button below to view or download my resume.</p>
+    <section id="resume" class="card">
+        <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Resume</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Click the button below to view or download my resume.</p>
         <a class="btn btn-primary" href="Updated%20Resume.pdf" target="_blank">📄 Download Resume</a>
     </section>
 
-    <section id="contact" class="card fade-up">
-      <h2>Get in touch</h2>
-      <div style="display:flex;gap:0.6rem;flex-wrap:wrap">
-        <a class="file-label" href="mailto:aryasharan47@gmail.com">📧 aryasharan47@gmail.com</a>
-        <a class="file-label" href="tel:+919110648489">📱 +91 91106 48489</a>
-        <a class="file-label" href="#">📍 Bangalore, India</a>
+    <section id="contact" class="card">
+      <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Get in touch</h2>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px;" href="mailto:aryasharan47@gmail.com">📧 aryasharan47@gmail.com</a>
+        <a class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px;" href="tel:+919110648489">📱 +91 91106 48489</a>
+        <span class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px; cursor:default;">📍 Bangalore, India</span>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <div style="max-width:1100px;margin:0 auto;padding:1rem;color:#eef;opacity:0.95;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
+    <div style="max-width:1100px;margin:0 auto;padding:1rem;color:#666;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
       <div>© 2025 Arya Sharan</div>
-      <div style="color:#dfe;">Built with passion and code</div>
+      <div>Built with passion and code</div>
     </div>
   </footer>
 
   <script>
-    // ======= Theme Toggle (persist in localStorage) =======
-    const themeToggle = document.getElementById('themeToggle');
-    const root = document.documentElement;
-    const stored = localStorage.getItem('theme');
-    if(stored) document.documentElement.setAttribute('data-theme', stored);
-    updateThemeUI();
-
-    themeToggle.addEventListener('click', ()=>{
-      const cur = document.documentElement.getAttribute('data-theme');
-      const next = cur === 'dark' ? null : 'dark';
-      if(next) document.documentElement.setAttribute('data-theme', next); else document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', next || 'light');
-      updateThemeUI();
-    });
-
-    function updateThemeUI(){
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      themeToggle.textContent = isDark ? '☀️' : '🌙';
-      themeToggle.setAttribute('aria-pressed', isDark);
-    }
-
     // ======= Simple Mobile Menu =======
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -410,14 +420,7 @@
       hamburger.setAttribute('aria-expanded', !open);
     });
 
-    // ======= Smooth fade-up on scroll =======
-    const faders = document.querySelectorAll('.fade-up');
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in') });
-    },{threshold:0.12});
-    faders.forEach(f=>obs.observe(f));
-
-    // ======= Projects carousel (basic) =======
+    // ======= Projects carousel =======
     const slides = document.getElementById('slides');
     const slideCount = slides.children.length;
     const dots = document.querySelectorAll('.proj-dot');
@@ -431,19 +434,21 @@
     document.getElementById('prevProj').addEventListener('click', ()=>goTo(current-1));
     document.getElementById('nextProj').addEventListener('click', ()=>goTo(current+1));
     dots.forEach(d=>d.addEventListener('click', ()=>goTo(Number(d.dataset.index))));
+    
+    // Auto play carousel
     let autoplay = setInterval(()=>goTo(current+1), 6000);
     slides.parentElement.addEventListener('mouseenter', ()=>clearInterval(autoplay));
     slides.parentElement.addEventListener('mouseleave', ()=>autoplay = setInterval(()=>goTo(current+1), 6000));
     goTo(0);
 
-    // ======= Accessibility: enable keyboard nav for buttons =======
+    // ======= Accessibility =======
     document.querySelectorAll('.btn-ghost, .btn').forEach(b=>{
       b.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') b.click(); });
     });
 
-    // ======= Small U/X: close mobile menu when clicking link =======
+    // ======= Close mobile menu on click =======
     document.querySelectorAll('#mobileMenu a, .nav-links a').forEach(a=>a.addEventListener('click', ()=>{
-        if(window.innerWidth < 980) {
+        if(window.innerWidth < 1024) {
             mobileMenu.style.display = 'none';
             hamburger.setAttribute('aria-expanded', 'false');
         }
