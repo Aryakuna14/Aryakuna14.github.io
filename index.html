@@ -7,7 +7,7 @@
 
   <link rel="icon" href="icon.jpg.jpeg" type="image/jpeg">
 
-  <meta name="description" content="Arya Sharan — 2nd year EEE student focused on Embedded Systems, Analog Electronics, and Entrepreneurship." />
+  <meta name="description" content="Arya Sharan — 2nd year EEE student focused on Renewable Energy, Embedded Systems, and Entrepreneurship." />
   <meta name="theme-color" content="#050505" />
 
   <style>
@@ -57,7 +57,7 @@
         transform: translate(-50%, -50%);
         border-radius: 50%;
         z-index: 9999;
-        pointer-events: none; /* Allows clicks to pass through cursor */
+        pointer-events: none; 
     }
     .cursor-dot {
         width: 8px;
@@ -107,7 +107,6 @@
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
-    /* FIX: Standard hover effect instead of 3D tilt for better clicking */
     .card:hover {
         border-color: rgba(255, 255, 255, 0.25);
         box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.8);
@@ -159,7 +158,6 @@
     /* Buttons */
     .cta{display:flex; gap:0.6rem; flex-wrap:nowrap; align-items:center;}
     
-    /* FIX: Force buttons to top layer */
     .btn{
         display:inline-flex;align-items:center;
         padding:0.8rem 1.2rem;
@@ -167,7 +165,7 @@
         font-weight:600;text-decoration: none;transition:0.3s; 
         white-space: nowrap; cursor: none; 
         position: relative;
-        z-index: 1000; /* Ensure it's clickable */
+        z-index: 1000;
     }
      
     .btn-primary{background:#fff;color:#000;border:1px solid #fff;}
@@ -211,7 +209,7 @@
 
     .project-links a {
         position: relative;
-        z-index: 1002; /* FIX: Ensure project buttons are on top */
+        z-index: 1002;
     }
 
     /* Footer */
@@ -229,7 +227,6 @@
       .nav-links{display:none}
       .hamburger{display:block}
        
-      /* Disable custom cursor on phone */
       *{cursor: auto;}
       .cursor-dot, .cursor-outline {display: none;}
     }
@@ -284,7 +281,7 @@
         <h1>Arya Sharan</h1>
         <div class="subtitle"><span class="typewriter"></span></div>
         <p class="desc">
-            Electrical and Electronics Engineering (EEE) student focused on <strong>Embedded Systems and Digital Electronics</strong>, with a proven track record in operations and entrepreneurial ventures.
+            EEE student focused on <strong>Embedded Systems, Renewable Energy, and Entrepreneurship</strong>. Experienced in industrial networking, power systems analysis, and brand strategy.
         </p>
 
         <div class="cta">
@@ -308,11 +305,21 @@
       <div style="display:grid;gap:2rem">
         
         <div>
+          <strong style="font-size:1.1rem; color:#fff;">Industrial Networking Head</strong>
+          <div class="meta">IEEE VTS DSCE | Bangalore — <span class="date">Nov 2025 - Present</span></div>
+          <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
+            <li>Spearhead communication strategies to connect with industry leaders in EV and automotive sectors.</li>
+            <li>Orchestrate industrial visits and technical workshops to bridge the gap between curriculum and industry.</li>
+            <li>Secure sponsorships for flagship events and build long-term partnerships for internships.</li>
+          </ul>
+        </div>
+
+        <div>
           <strong style="font-size:1.1rem; color:#fff;">Community Volunteer & Content Team Member</strong>
           <div class="meta">Under 25 DSCE | Bangalore — <span class="date">Sep 2025 - Present</span></div>
           <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-            <li>Facilitate on-ground logistics and attendee management for community events to ensure seamless execution.</li>
-            <li>Ideate and produce engaging social media content to enhance digital visibility and student interaction.</li>
+            <li>Facilitate on-ground logistics and attendee management for community events.</li>
+            <li>Ideate and produce engaging social media content to enhance digital visibility.</li>
           </ul>
         </div>
 
@@ -320,8 +327,8 @@
             <strong style="font-size:1.1rem; color:#fff;">Core Organizing Committee</strong>
             <div class="meta">ICISPES 2025 (DSCE) | Bangalore — <span class="date">Dec 2025</span></div>
             <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-              <li>Key role in hosting the International Conference on Intelligent Systems in Power Engineering, coordinating between researchers and experts.</li>
-              <li>Managed on-ground logistics, scheduling, and hospitality for international delegates and keynote speakers.</li>
+              <li>Hosted the International Conference on Intelligent Systems in Power Engineering.</li>
+              <li>Managed on-ground logistics and hospitality for international delegates and keynote speakers.</li>
             </ul>
         </div>
 
@@ -329,8 +336,8 @@
             <strong style="font-size:1.1rem; color:#fff;">Technical Intern</strong>
             <div class="meta">DESI Power | Bihar — <span class="date">Sep 2025 - Oct 2025</span></div>
             <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-              <li>Power Systems Analysis: Gained technical insights into the operation of decentralized power generation units and irrigation pumps.</li>
-              <li>Analyzed technical documentation to understand grid challenges and power distribution at a local level.</li>
+              <li>Analyzed operation of decentralized power generation (Solar PV, Biomass Gasifiers).</li>
+              <li>Studied practical aspects of rural electrification and energy services.</li>
             </ul>
         </div>
 
@@ -338,18 +345,9 @@
           <strong style="font-size:1.1rem; color:#fff;">PR Team Member</strong>
           <div class="meta">Dayananda Sagar College of Engineering — <span class="date">Oct 2024 - Present</span></div>
            <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-            <li>Develop and implement promotional strategies for major college events and student-led initiatives.</li>
-            <li>Foster key collaborations with internal and external partners to amplify event reach.</li>
+            <li>Develop promotional strategies for major college events.</li>
+            <li>Foster key collaborations with partners to amplify event reach.</li>
           </ul>
-        </div>
-
-        <div>
-            <strong style="font-size:1.1rem; color:#fff;">Operations Team Member</strong>
-            <div class="meta">IEDC — <span class="date">Nov 2024 - Sep 2025</span></div>
-             <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-              <li>Actively contributed to the planning and execution of innovation and entrepreneurship events (E-Summit).</li>
-              <li>Supported the project ideation process for student startups, fostering a vibrant startup culture.</li>
-            </ul>
         </div>
 
         <div>
@@ -357,8 +355,17 @@
           <div class="meta">Lowwkey | Bangalore & Mumbai — <span class="date">Sep 2024 - May 2025</span></div>
           <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
             <li>Co-founded and launched a niche print-on-demand clothing brand.</li>
-            <li>Designed targeted digital campaigns achieving a CPM of ₹50 and optimized user acquisition channels.</li>
+            <li>Designed targeted digital campaigns (CPM ₹50) and optimized user acquisition.</li>
           </ul>
+        </div>
+        
+        <div>
+            <strong style="font-size:1.1rem; color:#fff;">Operations Team Member</strong>
+            <div class="meta">IEDC — <span class="date">Nov 2024 - Sep 2025</span></div>
+             <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
+              <li>Planned and executed innovation and entrepreneurship events (E-Summit).</li>
+              <li>Supported project ideation for student startups.</li>
+            </ul>
         </div>
 
       </div>
@@ -385,19 +392,19 @@
     <section id="skills" class="card" data-aos="fade-up" data-tilt data-tilt-max="3">
       <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Skills</h2>
       <div class="skills">
-        <div class="skill">Embedded Systems</div>
-        <div class="skill">PV Cells</div>
-        <div class="skill">Analog Circuits</div>
-        <div class="skill">DSA</div>
-        <div class="skill">PCB Design</div>
         <div class="skill">Python</div>
         <div class="skill">C / C++</div>
         <div class="skill">MATLAB</div>
         <div class="skill">Arduino</div>
+        <div class="skill">Solar PV & Biomass</div>
+        <div class="skill">EV Technology</div>
+        <div class="skill">PCB Design</div>
         <div class="skill">AutoCAD</div>
+        <div class="skill">DSA</div>
         <div class="skill">Digital Marketing</div>
         <div class="skill">Brand Strategy</div>
-        <div class="skill">Public Relations</div>
+        <div class="skill">SEO</div>
+        <div class="skill">Sponsorship Negotiation</div>
         <div class="skill">Leadership</div>
       </div>
     </section>
@@ -410,7 +417,7 @@
           
           <article class="slide">
             <h3 style="color:#fff; margin-bottom:0.5rem;">🛍️ Lowwkey Brand Launch</h3>
-            <p style="margin-bottom:0.5rem;">Built a print-on-demand e-commerce strategy, platform selection, UX and marketing funnel to launch a niche clothing brand.</p>
+            <p style="margin-bottom:0.5rem;">Conceptualized brand identity, e-commerce strategy, and supply chain for a niche clothing brand. Achieved efficient user acquisition.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tools:</strong> Shopify / Meta Ads / Supply Chain Management</p>
             <div class="project-links" style="margin-top:1rem;">
                 <a href="https://www.instagram.com/lowwkey.shop/" class="btn btn-outline" target="_blank">View Live</a>
@@ -418,20 +425,20 @@
           </article>
 
           <article class="slide">
-            <h3 style="color:#fff; margin-bottom:0.5rem;">🐍 Python Learning Journey</h3>
-            <p style="margin-bottom:0.5rem;">Working through a full-stack Python path to combine AI, data science and engineering projects into product-ready demos.</p>
-            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Learning:</strong> Python, Pandas, NumPy, basic ML pipelines</p>
+            <h3 style="color:#fff; margin-bottom:0.5rem;">☀️ Solar Powered Radio</h3>
+            <p style="margin-bottom:0.5rem;">Designed a functional solar-powered radio receiver. Engineered a power management circuit to charge internal batteries via solar panels.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Analog Electronics / Solar PV / Power Management</p>
             <div class="project-links" style="margin-top:1rem;">
-                <a href="https://github.com/Aryakuna14" class="btn btn-outline" target="_blank">View Code</a>
+                <a href="F%20(2).pdf" class="btn btn-outline" target="_blank">View Project</a>
             </div>
           </article>
 
-          <article class="slide">
-            <h3 style="color:#fff; margin-bottom:0.5rem;">📻 Analog Radio Receiver & Power Management</h3>
-            <p style="margin-bottom:0.5rem;">Designed and prototyped a functional radio receiver, demonstrating core competency in analog circuit design and power efficiency.</p>
-            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Analog Electronics / Power Management Circuits / PCB Prototyping</p>
+           <article class="slide">
+            <h3 style="color:#fff; margin-bottom:0.5rem;">🐍 Python Learning Journey</h3>
+            <p style="margin-bottom:0.5rem;">Full-stack Python path combining AI, data science, and engineering projects into product-ready demos.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Learning:</strong> Python, Pandas, NumPy, Basic ML</p>
             <div class="project-links" style="margin-top:1rem;">
-                <a href="F%20(2).pdf" class="btn btn-outline" target="_blank">View Project</a>
+                <a href="https://github.com/Aryakuna14" class="btn btn-outline" target="_blank">View Code</a>
             </div>
           </article>
 
@@ -483,7 +490,6 @@
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     
-    // Only active on desktop
     if(window.innerWidth > 1024){
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
