@@ -57,7 +57,7 @@
         transform: translate(-50%, -50%);
         border-radius: 50%;
         z-index: 9999;
-        pointer-events: none; 
+        pointer-events: none; /* Allows clicks to pass through cursor */
     }
     .cursor-dot {
         width: 8px;
@@ -105,16 +105,12 @@
         padding:3rem;
         margin-bottom:2rem;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        transform-style: preserve-3d;
-        transform: perspective(1000px);
     }
     
-    /* FIX: Only allow hover effects on devices that have a mouse */
-    @media (hover: hover) {
-        .card:hover {
-            border-color: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.8);
-        }
+    /* FIX: Standard hover effect instead of 3D tilt for better clicking */
+    .card:hover {
+        border-color: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.8);
     }
 
     /* Hero */
@@ -162,21 +158,21 @@
 
     /* Buttons */
     .cta{display:flex; gap:0.6rem; flex-wrap:nowrap; align-items:center;}
+    
+    /* FIX: Force buttons to top layer */
     .btn{
         display:inline-flex;align-items:center;
         padding:0.8rem 1.2rem;
         border-radius:999px;
         font-weight:600;text-decoration: none;transition:0.3s; 
         white-space: nowrap; cursor: none; 
-        /* FIX: Ensures button is always on top for clicking */
         position: relative;
-        z-index: 10;
+        z-index: 1000; /* Ensure it's clickable */
     }
      
     .btn-primary{background:#fff;color:#000;border:1px solid #fff;}
     .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;}
 
-    /* FIX: Only scale buttons on mouse hover, not touch */
     @media (hover: hover) {
         .btn-primary:hover{transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.4);}
         .btn-outline:hover{border-color:#fff; background: rgba(255,255,255,0.05);}
@@ -208,10 +204,15 @@
     .carousel{position:relative;overflow:hidden;border-radius:12px; border: var(--border);}
     .slides{display:flex;transition:transform 0.5s ease}
     .slide{min-width:100%;padding:2rem;background:rgba(0,0,0,0.5);}
-    .proj-controls{position:absolute;right:1rem;top:1rem; display:flex; gap:0.5rem;}
-    .proj-dots-container {position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:6px;padding: 4px;}
-    .proj-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2)}
+    .proj-controls{position:absolute;right:1rem;top:1rem; display:flex; gap:0.5rem; z-index: 1001;}
+    .proj-dots-container {position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:6px;padding: 4px; z-index: 1001;}
+    .proj-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2); cursor: pointer;}
     .proj-dot.active{background:#fff}
+
+    .project-links a {
+        position: relative;
+        z-index: 1002; /* FIX: Ensure project buttons are on top */
+    }
 
     /* Footer */
     footer{text-align:center;padding:3rem 1rem; color: var(--muted); border-top: var(--border);}
@@ -401,7 +402,7 @@
       </div>
     </section>
 
-    <section id="projects" class="card" data-aos="fade-up" data-tilt data-tilt-max="3" data-tilt-glare data-tilt-max-glare="0.1">
+    <section id="projects" class="card" data-aos="fade-up">
       <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Projects</h2>
 
       <div class="carousel" aria-roledescription="carousel">
@@ -450,7 +451,7 @@
 
     </section>
 
-    <section id="resume" class="card" data-aos="zoom-in" data-tilt data-tilt-max="5">
+    <section id="resume" class="card" data-aos="zoom-in">
         <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Resume</h2>
         <p style="color:var(--muted);margin-bottom:1.5rem;">Click the button below to view or download my resume.</p>
         <a class="btn btn-primary" href="Updated%20Resume.pdf" target="_blank">📄 Download Resume</a>
