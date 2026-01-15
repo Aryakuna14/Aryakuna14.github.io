@@ -33,19 +33,18 @@
     body{
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color:var(--text);
-      background-color: var(--bg-1); /* Only base color here */
+      background-color: var(--bg-1);
       line-height:1.6;
     }
 
-    /* === 1. PARTICLE BACKGROUND (FIXED FOR MOBILE) === */
+    /* === 1. PARTICLE BACKGROUND === */
     #particles-js {
         position: fixed;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
-        z-index: -1; /* Puts it definitely behind everything */
-        /* Moved gradient HERE so particles are always visible on top of it */
+        z-index: -1; 
         background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 80%);
     }
 
@@ -58,7 +57,7 @@
         transform: translate(-50%, -50%);
         border-radius: 50%;
         z-index: 9999;
-        pointer-events: none;
+        pointer-events: none; 
     }
     .cursor-dot {
         width: 8px;
@@ -95,7 +94,7 @@
         margin:110px auto 40px;
         padding:1.5rem;
         position: relative;
-        z-index: 2; /* Ensures text sits ABOVE the particles */
+        z-index: 2; 
     }
      
     /* Cards */
@@ -109,9 +108,13 @@
         transform-style: preserve-3d;
         transform: perspective(1000px);
     }
-    .card:hover {
-        border-color: rgba(255, 255, 255, 0.25);
-        box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.8);
+    
+    /* FIX: Only allow hover effects on devices that have a mouse */
+    @media (hover: hover) {
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.8);
+        }
     }
 
     /* Hero */
@@ -165,14 +168,20 @@
         border-radius:999px;
         font-weight:600;text-decoration: none;transition:0.3s; 
         white-space: nowrap; cursor: none; 
+        /* FIX: Ensures button is always on top for clicking */
+        position: relative;
+        z-index: 10;
     }
      
     .btn-primary{background:#fff;color:#000;border:1px solid #fff;}
-    .btn-primary:hover{transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.4);}
-     
     .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;}
-    .btn-outline:hover{border-color:#fff; background: rgba(255,255,255,0.05);}
 
+    /* FIX: Only scale buttons on mouse hover, not touch */
+    @media (hover: hover) {
+        .btn-primary:hover{transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.4);}
+        .btn-outline:hover{border-color:#fff; background: rgba(255,255,255,0.05);}
+    }
+    
     /* Skills */
     .skills{display:flex;flex-wrap:wrap;gap:0.8rem}
     .skill{
@@ -219,7 +228,7 @@
       .nav-links{display:none}
       .hamburger{display:block}
        
-      /* Disable custom cursor on phone to prevent lag */
+      /* Disable custom cursor on phone */
       *{cursor: auto;}
       .cursor-dot, .cursor-outline {display: none;}
     }
@@ -236,7 +245,7 @@
   <nav>
     <div class="nav-inner">
       <div style="display:flex;gap:1rem;align-items:center">
-        <img src="icon.jpg.jpeg" alt="Logo" style="height:40px; width:40px; border-radius:50%; object-fit:cover;">
+        <img src="profile.png" alt="Logo" style="height:40px; width:40px; border-radius:50%; object-fit:cover;">
         
         <div class="nav-links" id="navLinks">
           <a href="#home">Home</a>
@@ -269,7 +278,7 @@
 
   <main class="wrap">
     
-    <section id="home" class="card hero" data-aos="fade-up" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.2">
+    <section id="home" class="card hero" data-aos="fade-up">
       <div class="hero-left">
         <h1>Arya Sharan</h1>
         <div class="subtitle"><span class="typewriter"></span></div>
@@ -287,7 +296,6 @@
 
       <aside class="hero-right profile">
         <img src="profile.png" class="avatar" alt="Arya Sharan">
-        
         <div style="font-weight:800; font-size:1.4rem;">Arya Sharan</div>
         <div class="meta" style="margin-top:0.5rem;">Dayananda Sagar College of Engineering — BE (EEE)</div>
         <div style="margin-top:0.5rem;color:var(--muted);font-weight:600">Bangalore • +91 91106 48489</div>
@@ -467,11 +475,10 @@
   </footer>
 
  <script>
-    // ======= 1. FORCE TOP SCROLL =======
     if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
     window.scrollTo(0, 0);
 
-    // ======= 2. CUSTOM CURSOR LOGIC =======
+    // ======= CURSOR LOGIC =======
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     
@@ -481,18 +488,15 @@
             const posX = e.clientX;
             const posY = e.clientY;
             
-            // Dot follows instantly
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
             
-            // Outline follows with lag (smoothness)
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
             }, { duration: 500, fill: "forwards" });
         });
         
-        // Add hover effect to clickable items
         const clickables = document.querySelectorAll('a, button, .card');
         clickables.forEach(el => {
             el.addEventListener('mouseenter', () => {
@@ -508,17 +512,16 @@
         });
     }
 
-    // ======= 3. BACKGROUND PARTICLES =======
+    // ======= BACKGROUND PARTICLES =======
     const scriptParticles = document.createElement('script');
     scriptParticles.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
     scriptParticles.onload = () => {
         particlesJS("particles-js", {
             "particles": {
-                // Increased number for mobile visibility
                 "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
                 "color": { "value": "#ffffff" },
                 "shape": { "type": "circle" },
-                "opacity": { "value": 0.3, "random": true }, // Higher opacity
+                "opacity": { "value": 0.3, "random": true },
                 "size": { "value": 3, "random": true },
                 "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
                 "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
@@ -533,7 +536,7 @@
     };
     document.head.appendChild(scriptParticles);
 
-    // ======= 4. ANIMATIONS (AOS & Typed & Tilt) =======
+    // ======= ANIMATIONS =======
     const scriptAOS = document.createElement('script');
     scriptAOS.src = "https://unpkg.com/aos@2.3.1/dist/aos.js";
     scriptAOS.onload = () => { AOS.init({ duration: 800, once: true }); };
@@ -556,7 +559,7 @@
     };
     document.head.appendChild(scriptTyped);
 
-    // ======= 5. MOBILE MENU & CAROUSEL =======
+    // ======= MOBILE MENU & CAROUSEL =======
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     
