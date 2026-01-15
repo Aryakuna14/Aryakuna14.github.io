@@ -24,12 +24,12 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0; cursor: none;} 
-    
+     
     html,body{
         min-height:100%; 
         overflow-x: hidden;
     }
-    
+     
     body{
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color:var(--text);
@@ -80,7 +80,7 @@
     /* Nav */
     nav{position:fixed;left:0;right:0;top:0;width:100%;z-index:999; border-bottom: var(--border); background: var(--glass); backdrop-filter: blur(15px);}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem;}
-    
+     
     .nav-links{display:flex;gap:1.5rem;align-items:center}
     .nav-links a{color:var(--muted);text-decoration:none;font-size:0.95rem;transition:0.3s; position:relative;}
     .nav-links a:hover{color:#fff; text-shadow: 0 0 10px rgba(255,255,255,0.5);}
@@ -97,7 +97,7 @@
         position: relative;
         z-index: 2; /* Ensures text sits ABOVE the particles */
     }
-    
+     
     /* Cards */
     .card{
         background: var(--surface);
@@ -166,10 +166,10 @@
         font-weight:600;text-decoration: none;transition:0.3s; 
         white-space: nowrap; cursor: none; 
     }
-    
+     
     .btn-primary{background:#fff;color:#000;border:1px solid #fff;}
     .btn-primary:hover{transform: scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.4);}
-    
+     
     .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;}
     .btn-outline:hover{border-color:#fff; background: rgba(255,255,255,0.05);}
 
@@ -218,7 +218,7 @@
       .hero-left{display:flex; flex-direction:column; align-items:center;}
       .nav-links{display:none}
       .hamburger{display:block}
-      
+       
       /* Disable custom cursor on phone to prevent lag */
       *{cursor: auto;}
       .cursor-dot, .cursor-outline {display: none;}
@@ -281,12 +281,12 @@
           <a class="btn btn-primary" href="https://github.com/Aryakuna14" target="_blank">🚀 GitHub</a>
           <a class="btn btn-primary" href="https://www.linkedin.com/in/arya-sharan-516319200/" target="_blank">💼 LinkedIn</a>
           <a class="btn btn-primary" href="https://www.instagram.com/axya1_7" target="_blank">📸 Instagram</a>
-          <a class="btn btn-outline" href="http://www.lowwkey.shop" target="_blank">👕 Lowwkey</a>
+          <a class="btn btn-outline" href="https://www.instagram.com/lowwkey.shop/" target="_blank">👕 Lowwkey</a>
         </div>
       </div>
 
       <aside class="hero-right profile">
-        <img src="profile.png" class="avatar" alt="Arya Sharan">
+        <img src="icon.jpg.jpeg" class="avatar" alt="Arya Sharan">
         
         <div style="font-weight:800; font-size:1.4rem;">Arya Sharan</div>
         <div class="meta" style="margin-top:0.5rem;">Dayananda Sagar College of Engineering — BE (EEE)</div>
@@ -599,6 +599,6 @@
         slides.parentElement.addEventListener('mouseleave', ()=>autoplay = setInterval(()=>goTo(current+1), 6000));
         goTo(0);
     }
-  </script>
+ </script>
 </body>
 </html>
