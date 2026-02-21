@@ -37,7 +37,6 @@
       line-height:1.6;
     }
 
-    /* === 1. PARTICLE BACKGROUND === */
     #particles-js {
         position: fixed;
         width: 100%;
@@ -48,7 +47,6 @@
         background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 80%);
     }
 
-    /* === 2. CUSTOM CURSOR === */
     .cursor-dot,
     .cursor-outline {
         position: fixed;
@@ -76,7 +74,6 @@
     ::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #666; }
 
-    /* Nav */
     nav{position:fixed;left:0;right:0;top:0;width:100%;z-index:999; border-bottom: var(--border); background: var(--glass); backdrop-filter: blur(15px);}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem;}
      
@@ -88,7 +85,6 @@
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.2);color:#fff;padding:0.4rem 0.8rem;border-radius:8px;cursor:pointer}
     .hamburger{display:none;padding:0.5rem;border-radius:8px}
 
-    /* Layout */
     .wrap{
         max-width:1100px;
         margin:110px auto 40px;
@@ -97,7 +93,6 @@
         z-index: 2; 
     }
      
-    /* Cards */
     .card{
         background: var(--surface);
         border: var(--border);
@@ -112,7 +107,6 @@
         box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.8);
     }
 
-    /* Hero */
     .hero{
         display:grid;
         grid-template-columns: 1fr 350px;
@@ -120,7 +114,6 @@
         align-items:center;
     }
 
-    /* Holographic Text */
     .hero h1{
       font-size:3.8rem;
       letter-spacing: -2px;
@@ -139,7 +132,6 @@
     .subtitle{color:#fff;font-weight:600;margin-bottom:1rem; font-size: 1.2rem;}
     .desc{color:var(--muted);max-width:55ch;margin-bottom:2rem; font-size: 1.05rem;}
 
-    /* Profile Avatar */
     .profile{text-align:center;}
     .avatar{
         width:180px; height:180px; 
@@ -155,7 +147,6 @@
       100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
     }
 
-    /* Buttons */
     .cta{display:flex; gap:0.6rem; flex-wrap:nowrap; align-items:center;}
     
     .btn{
@@ -176,7 +167,6 @@
         .btn-outline:hover{border-color:#fff; background: rgba(255,255,255,0.05);}
     }
     
-    /* Skills */
     .skills{display:flex;flex-wrap:wrap;gap:0.8rem}
     .skill{
         border: 1px solid rgba(255,255,255,0.15);
@@ -194,14 +184,12 @@
         box-shadow: 0 5px 15px rgba(255,255,255,0.1);
     }
 
-    /* Experience */
     .meta{color:var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem;}
     ul li { margin-bottom: 0.5rem; color: var(--muted); }
 
-    /* Carousel */
-    .carousel{position:relative;overflow:hidden;border-radius:12px; border: var(--border); background: rgba(0,0,0,0.5);}
+    .carousel{position:relative;overflow:hidden;border-radius:12px; border: var(--border);}
     .slides{display:flex;transition:transform 0.5s ease}
-    .slide{min-width:100%;padding:2rem;}
+    .slide{min-width:100%;padding:2rem;background:rgba(0,0,0,0.5);}
     .proj-controls{position:absolute;right:1rem;top:1rem; display:flex; gap:0.5rem; z-index: 1001;}
     .proj-dots-container {position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:6px;padding: 4px; z-index: 1001;}
     .proj-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2); cursor: pointer;}
@@ -212,10 +200,8 @@
         z-index: 1002;
     }
 
-    /* Footer */
     footer{text-align:center;padding:3rem 1rem; color: var(--muted); border-top: var(--border);}
 
-    /* Mobile Optimizations */
     @media (max-width:1024px){
       .wrap{margin-top: 130px;} 
       .card{ padding: 1.5rem; } 
@@ -281,7 +267,7 @@
         <h1>Arya Sharan</h1>
         <div class="subtitle"><span class="typewriter"></span></div>
         <p class="desc">
-            3rd-Semester EEE student focused on <strong>Semiconductors, Embedded Systems, and Data Structures</strong>. Bridging the gap between academic theory and real-world hardware deployment.
+            3rd-Semester EEE student focused on <strong>Semiconductors, Embedded Systems, and Data Structures</strong>. Passionate about bridging the gap between hardware and software.
         </p>
 
         <div class="cta">
@@ -308,26 +294,26 @@
           <strong style="font-size:1.1rem; color:#fff;">Student Intern</strong>
           <div class="meta">Nunam Technologies | Bengaluru — <span class="date">Jan 2026 - Feb 2026</span></div>
           <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-            <li>Contributed to the R&D of a Portable Charging Station prototype utilizing repurposed second-life lithium-ion batteries. </li>
-            <li>Conducted hands-on cell testing, battery integration, and circuit evaluation to support sustainable energy storage solutions. [cite: 15]</li>
+            <li>Contributed to R&D for Portable Charging Stations using repurposed lithium-ion batteries.</li>
+            <li>Performed cell testing and battery integration to support sustainable energy storage solutions.</li>
           </ul>
         </div>
 
         <div>
-            <strong style="font-size:1.1rem; color:#fff;">Industrial Networking & Events Head</strong>
-            <div class="meta">IEEE VTS DSCE | Bengaluru — <span class="date">Nov 2025 - Present</span></div>
-            <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-              <li>Orchestrated industrial visits and technical workshops to bridge theoretical curriculum with EV industry standards. [cite: 50]</li>
-              <li>Spearheaded corporate outreach strategies and successfully negotiated sponsorships for flagship hackathons. [cite: 51]</li>
-            </ul>
+          <strong style="font-size:1.1rem; color:#fff;">Industrial Networking Head</strong>
+          <div class="meta">IEEE VTS DSCE | Bengaluru — <span class="date">Nov 2025 - Present</span></div>
+          <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
+            <li>Bridged the gap between theoretical curriculum and EV industry standards through expert talk series.</li>
+            <li>Negotiated sponsorships for flagship hackathons and orchestrated industrial visits.</li>
+          </ul>
         </div>
 
         <div>
             <strong style="font-size:1.1rem; color:#fff;">Technical Intern</strong>
             <div class="meta">DESI Power | Bihar — <span class="date">Sep 2025 - Oct 2025</span></div>
             <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-              <li>Gained technical insights into the operation of Solar PV, Biomass Gasifiers, and Biochar units. [cite: 18, 19, 25, 26]</li>
-              <li>Analyzed ground-level challenges of rural electrification and decentralized power generation. [cite: 20, 21]</li>
+              <li>Analyzed technical operations of Solar PV and Biomass Gasifier decentralized plants.</li>
+              <li>Studied ground-level challenges for rural electrification and power generation.</li>
             </ul>
         </div>
 
@@ -335,19 +321,11 @@
           <strong style="font-size:1.1rem; color:#fff;">Co-Owner & Marketing Head</strong>
           <div class="meta">Lowwkey | Bangalore & Mumbai — <span class="date">Sep 2024 - May 2025</span></div>
           <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-            <li>Co-founded and launched a niche streetwear brand, overseeing brand strategy and e-commerce supply chain. [cite: 22, 27, 28, 29]</li>
-            <li>Designed and executed digital marketing campaigns, achieving an efficient CPM of ₹50. [cite: 30]</li>
+            <li>Co-founded and launched a print-on-demand streetwear brand, achieving an efficient CPM of ₹50.</li>
+            <li>Managed e-commerce supply chain, brand strategy, and targeted digital marketing campaigns.</li>
           </ul>
         </div>
 
-        <div>
-          <strong style="font-size:1.1rem; color:#fff;">Community Volunteer & Content Team</strong>
-          <div class="meta">Under 25 DSCE | Bangalore — <span class="date">Sep 2025 - Present</span></div>
-          <ul style="margin-top:0.6rem;line-height:1.6;color:var(--muted);padding-left: 1.2rem;">
-            <li>Facilitated logistics and attendee management for community events, ensuring seamless execution. [cite: 10, 11, 23]</li>
-            <li>Ideated and produced engaging social media content to enhance digital visibility for the student chapter. [cite: 12]</li>
-          </ul>
-        </div>
       </div>
     </section>
 
@@ -356,15 +334,11 @@
       <div style="display:flex;flex-direction:column;gap:1.5rem">
         <div>
           <strong style="font-size:1.1rem; color:#fff;">Bachelor of Engineering - Electrical & Electronics</strong>
-          <div class="meta">Dayananda Sagar College of Engineering — 2024 - 2028 [cite: 32, 33]</div>
+          <div class="meta">Dayananda Sagar College of Engineering — 2024 - 2028</div>
         </div>
         <div>
           <strong style="font-size:1.1rem; color:#fff;">Senior Secondary School (Class 12)</strong>
-          <div class="meta">DY Patil International School — 2021 - 2023 (Maths & CS) [cite: 35, 36]</div>
-        </div>
-        <div>
-          <strong style="font-size:1.1rem; color:#fff;">High School (Class 10)</strong>
-          <div class="meta">Bishop Cotton Boys' School — 2021 [cite: 38, 39, 40]</div>
+          <div class="meta">DY Patil International School — 2021 - 2023 (Maths & CS)</div>
         </div>
       </div>
     </section>
@@ -372,43 +346,59 @@
     <section id="skills" class="card" data-aos="fade-up" data-tilt data-tilt-max="3">
       <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Skills</h2>
       <div class="skills">
-        <div class="skill">C / C++ [cite: 46]</div>
-        <div class="skill">Python [cite: 46]</div>
-        <div class="skill">Data Structures [cite: 46]</div>
-        <div class="skill">Arduino [cite: 44]</div>
-        <div class="skill">PCB Design [cite: 44]</div>
-        <div class="skill">EV Technology [cite: 44]</div>
-        <div class="skill">Solar PV & Biomass [cite: 44]</div>
-        <div class="skill">MATLAB [cite: 46]</div>
-        <div class="skill">AutoCAD [cite: 46]</div>
-        <div class="skill">Digital Marketing [cite: 48]</div>
-        <div class="skill">Brand Strategy [cite: 48]</div>
-        <div class="skill">Sponsorship & Negotiation [cite: 48]</div>
+        <div class="skill">C / C++</div>
+        <div class="skill">Python</div>
+        <div class="skill">Data Structures</div>
+        <div class="skill">Arduino & PCB Design</div>
+        <div class="skill">EV Technology</div>
+        <div class="skill">Solar PV & Biomass</div>
+        <div class="skill">MATLAB</div>
+        <div class="skill">AutoCAD</div>
+        <div class="skill">Digital Marketing</div>
+        <div class="skill">Sponsorship Negotiation</div>
       </div>
     </section>
 
     <section id="projects" class="card" data-aos="fade-up">
-      <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Projects</h2>
+      <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Projects & Initiatives</h2>
 
       <div class="carousel" aria-roledescription="carousel">
         <div class="slides" id="slides">
           
           <article class="slide">
             <h3 style="color:#fff; margin-bottom:0.5rem;">🤖 Focus and Posture Bot</h3>
-            <p style="margin-bottom:0.5rem;">Engineered a hardware-based system using sensors and a microcontroller to track and correct user posture in real-time. [cite: 50]</p>
-            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Microcontrollers / Embedded Systems / Sensors</p>
+            <p style="margin-bottom:0.5rem;">Engineered a hardware assistant using sensors to track and correct user posture in real-time.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Microcontrollers / Sensors / Embedded Systems</p>
           </article>
 
           <article class="slide">
             <h3 style="color:#fff; margin-bottom:0.5rem;">🚗 Vigi-Drive Prototype</h3>
-            <p style="margin-bottom:0.5rem;">Developed an automotive safety system to monitor driver alertness and physiological vital signs during a college hackathon. [cite: 50]</p>
+            <p style="margin-bottom:0.5rem;">Hackathon project monitoring driver alertness and vitals using hardware sensors and algorithms.</p>
             <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Hardware Sensors / Monitoring Algorithms</p>
           </article>
 
           <article class="slide">
             <h3 style="color:#fff; margin-bottom:0.5rem;">☀️ Solar Powered Radio</h3>
-            <p style="margin-bottom:0.5rem;">Designed a functional analog electronics system utilizing renewable energy for signal testing and optimization. [cite: 50]</p>
-            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Analog Electronics / Solar PV / Power Management</p>
+            <p style="margin-bottom:0.5rem;">Designed an analog receiver with a power management circuit utilizing renewable energy.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Tech:</strong> Analog Electronics / Solar PV</p>
+          </article>
+
+          <article class="slide">
+            <h3 style="color:#fff; margin-bottom:0.5rem;">📣 Under 25 Community Operations</h3>
+            <p style="margin-bottom:0.5rem;">Facilitated logistics for large-scale events and ideated content to boost campus digital visibility.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Role:</strong> Volunteer & Content Team Member</p>
+          </article>
+
+          <article class="slide">
+            <h3 style="color:#fff; margin-bottom:0.5rem;">🏢 IEDC Operations, DSCE</h3>
+            <p style="margin-bottom:0.5rem;">Supported project ideation for campus startups and executed flagship entrepreneurship events like E-Summit.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Impact:</strong> Innovation & Startup Culture Outreach</p>
+          </article>
+
+          <article class="slide">
+            <h3 style="color:#fff; margin-bottom:0.5rem;">🌐 ICISPES 2025 Logistics</h3>
+            <p style="margin-bottom:0.5rem;">Managed on-ground logistics and hospitality for international speakers at an intelligent systems conference.</p>
+            <p style="margin-top:0.6rem;color:var(--muted)"><strong>Role:</strong> Conference Management</p>
           </article>
 
         </div>
@@ -422,22 +412,26 @@
           <div class="proj-dot" data-index="0"></div>
           <div class="proj-dot" data-index="1"></div>
           <div class="proj-dot" data-index="2"></div>
+          <div class="proj-dot" data-index="3"></div>
+          <div class="proj-dot" data-index="4"></div>
+          <div class="proj-dot" data-index="5"></div>
         </div>
       </div>
+
     </section>
 
     <section id="resume" class="card" data-aos="zoom-in">
         <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Resume</h2>
-        <p style="color:var(--muted);margin-bottom:1.5rem;">Download my latest professional resume (Updated Feb 2026).</p>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">View or download my latest resume below.</p>
         <a class="btn btn-primary" href="resume.pdf" target="_blank">📄 Download Resume</a>
     </section>
 
     <section id="contact" class="card" data-aos="fade-up" data-tilt data-tilt-max="5">
       <h2 style="font-size:1.8rem; margin-bottom:1.5rem;">Get in touch</h2>
       <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px;" href="mailto:aryasharan47@gmail.com">📧 aryasharan47@gmail.com [cite: 2]</a>
-        <a class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px;" href="tel:+919110648489">📱 +91 91106 48489 [cite: 2]</a>
-        <span class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px; cursor:default;">📍 Bangalore, India [cite: 4]</span>
+        <a class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px;" href="mailto:aryasharan47@gmail.com">📧 aryasharan47@gmail.com</a>
+        <a class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px;" href="tel:+919110648489">📱 +91 91106 48489</a>
+        <span class="btn-outline" style="padding:0.6rem 1rem; border-radius:8px; cursor:default;">📍 Bangalore, India</span>
       </div>
     </section>
 
@@ -454,7 +448,6 @@
     if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
     window.scrollTo(0, 0);
 
-    // ======= CURSOR LOGIC =======
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     
@@ -462,10 +455,8 @@
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX;
             const posY = e.clientY;
-            
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
-            
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
@@ -487,7 +478,6 @@
         });
     }
 
-    // ======= BACKGROUND PARTICLES =======
     const scriptParticles = document.createElement('script');
     scriptParticles.src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js";
     scriptParticles.onload = () => {
@@ -501,17 +491,11 @@
                 "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
                 "move": { "enable": true, "speed": 1, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } } }
-            },
             "retina_detect": true
         });
     };
     document.head.appendChild(scriptParticles);
 
-    // ======= ANIMATIONS =======
     const scriptAOS = document.createElement('script');
     scriptAOS.src = "https://unpkg.com/aos@2.3.1/dist/aos.js";
     scriptAOS.onload = () => { AOS.init({ duration: 800, once: true }); };
@@ -534,7 +518,6 @@
     };
     document.head.appendChild(scriptTyped);
 
-    // ======= MOBILE MENU & CAROUSEL =======
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     
@@ -545,36 +528,21 @@
           hamburger.setAttribute('aria-expanded', !open);
         });
     }
-
-    document.querySelectorAll('#mobileMenu a, .nav-links a').forEach(a => {
-      a.addEventListener('click', () => {
-        if(window.innerWidth < 1024) {
-            mobileMenu.style.display = 'none';
-            hamburger.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
     
     const slides = document.getElementById('slides');
     if(slides){
         const slideCount = slides.children.length;
         const dots = document.querySelectorAll('.proj-dot');
         let current = 0;
-        
         function goTo(i){
           current = (i + slideCount) % slideCount;
           slides.style.transform = `translateX(-${current * 100}%)`;
           dots.forEach(d=>d.classList.remove('active'));
           if(dots[current]) dots[current].classList.add('active');
         }
-        
         document.getElementById('prevProj').addEventListener('click', ()=>goTo(current-1));
         document.getElementById('nextProj').addEventListener('click', ()=>goTo(current+1));
         dots.forEach(d=>d.addEventListener('click', ()=>goTo(Number(d.dataset.index))));
-        
-        let autoplay = setInterval(()=>goTo(current+1), 6000);
-        slides.parentElement.addEventListener('mouseenter', ()=>clearInterval(autoplay));
-        slides.parentElement.addEventListener('mouseleave', ()=>autoplay = setInterval(()=>goTo(current+1), 6000));
         goTo(0);
     }
  </script>
